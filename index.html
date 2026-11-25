@@ -1,39 +1,26 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" class="dark">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Radio Tilawat Maroc 2027 – المصحف الذكي ورش • الأمداح • المحاضرات • الدروس</title>
+  <title>mp3 isslam – الموسوعة الإسلامية الزجاجية | القرآن، محمود الشحات أنور، الأمداح، والمحاضرات</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;900&family=VT323&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
   
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
-          colors: {
-            morocco: {
-              red: '#c1272d',
-              green: '#006233',
-              gold: '#e0a938',
-              obsidian: '#070b10',
-              surface: '#0e151e',
-              card: '#141e2b',
-              border: '#223244',
-            }
-          },
           fontFamily: {
             quran: ['"Amiri Quran"', 'Amiri', 'serif'],
             amiri: ['Amiri', 'serif'],
             cairo: ['Cairo', 'sans-serif'],
             tajawal: ['Tajawal', 'sans-serif'],
-            lcd: ['VT323', 'monospace'],
           }
         }
       }
@@ -43,376 +30,360 @@
   <style>
     html, body { overflow-x: hidden; max-width: 100%; }
     ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #070b10; }
-    ::-webkit-scrollbar-thumb { background: #223244; border-radius: 6px; }
-    ::-webkit-scrollbar-thumb:hover { background: #006233; }
+    ::-webkit-scrollbar-track { background: rgba(255,255,255,0.4); }
+    ::-webkit-scrollbar-thumb { background: rgba(14, 165, 233, 0.35); border-radius: 6px; }
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-    .glass-2027 {
-      background: linear-gradient(145deg, rgba(20, 30, 43, 0.90) 0%, rgba(11, 17, 24, 0.95) 100%);
+    /* Light Frosted Glassmorphism 2027 */
+    .glass-light {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 100%);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
-      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 20px 50px -12px rgba(14, 116, 144, 0.14), inset 0 1px 1px rgba(255, 255, 255, 0.9);
     }
-    .aurora-glow {
-      background: radial-gradient(circle at 20% 20%, rgba(0, 98, 51, 0.22) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 80%, rgba(224, 169, 56, 0.14) 0%, transparent 50%);
+    .glass-card {
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+    }
+    .glass-navbar {
+      background: rgba(255, 255, 255, 0.68);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 32px rgba(14, 116, 144, 0.08);
+    }
+    .cyan-ring-glow {
+      box-shadow: 0 0 35px rgba(34, 211, 238, 0.55), inset 0 0 25px rgba(56, 189, 248, 0.35);
     }
     @keyframes slowSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-    .spin-slow { animation: slowSpin 16s linear infinite; }
+    .spin-slow { animation: slowSpin 18s linear infinite; }
     .spin-paused { animation-play-state: paused; }
-    .wave-bar-2027 { transition: height 0.12s ease; background: linear-gradient(180deg, #e0a938 0%, #10b981 100%); }
     .blur-ayah { filter: blur(6px); user-select: none; transition: filter 0.25s ease; cursor: pointer; }
     .blur-ayah.revealed, .blur-ayah:hover { filter: blur(0px); }
-    .winamp-chassis { background: linear-gradient(180deg, #3d454e 0%, #181d24 100%); border: 1px solid #101419; }
-    .winamp-display { background: #001205; border: 1px solid #003311; }
-    .winamp-button { background: linear-gradient(180deg, #444f5c 0%, #1e242c 100%); border: 1px solid #14181e; }
-    .lcd-text { color: #00ff66; font-family: 'VT323', monospace; }
   </style>
 </head>
-<body class="bg-morocco-obsidian text-slate-100 font-tajawal min-h-screen selection:bg-morocco-green selection:text-white pb-40">
+<body class="bg-gradient-to-br from-sky-100 via-slate-50 to-emerald-50 text-slate-800 font-tajawal min-h-screen selection:bg-sky-500 selection:text-white pb-40 relative">
+
+  <!-- Ambient Pastel Light Orbs -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+    <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-sky-300/35 blur-3xl"></div>
+    <div class="absolute top-1/3 -left-24 w-96 h-96 rounded-full bg-emerald-200/40 blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/3 w-96 h-96 rounded-full bg-indigo-200/35 blur-3xl"></div>
+  </div>
 
   <!-- AUDIO ENGINE -->
   <audio id="audio-engine" preload="auto"></audio>
 
-  <!-- DEDICATION / DUA BANNER + LIVE HIJRI/GREGORIAN DATE -->
-  <div class="bg-gradient-to-r from-emerald-950 via-morocco-green/40 to-amber-950/60 border-b border-amber-500/30 py-2 px-3">
+  <!-- DEDICATION / DUA BANNER + LIVE HIJRI & GREGORIAN DATE -->
+  <div class="bg-white/55 backdrop-blur-md border-b border-white/80 py-2 px-3">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1.5 text-center">
-      <p class="text-xs sm:text-sm font-amiri font-bold text-amber-200 flex items-center gap-2">
-        <i class="fa-solid fa-hands-praying text-morocco-gold"></i>
+      <p class="text-xs sm:text-sm font-amiri font-bold text-emerald-800 flex items-center gap-2">
+        <i class="fa-solid fa-hands-praying text-amber-600"></i>
         <span>🤲 المرجو الدعاء لي ولوالديّ بالرحمة والمغفرة 🤲</span>
       </p>
-      <div class="flex items-center gap-2 text-[11px] font-semibold">
-        <span id="live-hijri-date" class="px-2.5 py-0.5 rounded-full bg-black/30 text-emerald-300 border border-emerald-500/30">...</span>
-        <span id="live-gregorian-date" class="px-2.5 py-0.5 rounded-full bg-black/30 text-slate-300 border border-white/10">...</span>
-        <button id="open-date-converter-btn" class="px-2.5 py-0.5 rounded-full bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 transition">
+      <div class="flex flex-wrap items-center justify-center gap-2 text-[11px] font-semibold">
+        <span id="live-hijri-date" class="px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-800 border border-emerald-500/25">...</span>
+        <span id="live-gregorian-date" class="px-2.5 py-0.5 rounded-full bg-sky-500/10 text-slate-700 border border-sky-500/20">...</span>
+        <button id="open-date-converter-btn" class="px-2.5 py-0.5 rounded-full bg-amber-500/20 hover:bg-amber-500/30 text-amber-900 border border-amber-500/35 transition">
           <i class="fa-solid fa-calendar-days ml-1"></i>محول التاريخ
         </button>
       </div>
     </div>
   </div>
 
-  <!-- HEADER -->
-  <header class="sticky top-0 z-40 bg-morocco-surface/95 backdrop-blur-xl border-b border-morocco-border/80">
+  <!-- GLASSY NAVBAR -->
+  <header class="sticky top-0 z-40 glass-navbar">
     <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-14 sm:h-16">
         
-        <!-- Brand -->
-        <div class="flex items-center gap-2 cursor-pointer" id="nav-brand-click">
-          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl p-0.5 bg-gradient-to-tr from-morocco-green via-emerald-400 to-morocco-gold flex-shrink-0">
-            <svg class="w-full h-full rounded-xl" viewBox="0 0 200 200">
-              <rect width="200" height="200" rx="36" fill="#070b10"/>
-              <path d="M100 22 L120 75 L175 62 L138 105 L180 145 L125 145 L100 185 L75 145 L20 145 L62 105 L25 62 L80 75 Z" fill="#006233" stroke="#e0a938" stroke-width="4"/>
-              <circle cx="100" cy="100" r="32" fill="#0e151e" stroke="#e0a938" stroke-width="3"/>
-              <path d="M90 83 L122 100 L90 117 Z" fill="#e0a938"/>
-            </svg>
-          </div>
+        <!-- New mp3 isslam Brand & Logo -->
+        <div class="flex items-center gap-2.5 cursor-pointer" id="nav-brand-click">
+          <img src="data:image/jpeg;base64,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" alt="mp3 isslam" class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl object-cover shadow-md border border-white">
           <div>
-            <h1 class="text-sm sm:text-lg font-bold font-cairo text-white leading-tight">Radio Tilawat Maroc</h1>
-            <p class="text-[10px] text-emerald-400 hidden sm:block">الموسوعة الإسلامية الذكية 2027</p>
+            <div class="flex items-center gap-1.5">
+              <h1 class="text-base sm:text-xl font-black font-cairo bg-gradient-to-r from-sky-700 via-emerald-700 to-teal-600 bg-clip-text text-transparent">mp3 isslam</h1>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sky-500/15 text-sky-700 border border-sky-500/25">2027</span>
+            </div>
+            <p class="text-[10px] text-slate-500 hidden sm:block">Radio Tilawat Maroc • القرآن، محمود الشحات أنور، الأمداح والمحاضرات</p>
           </div>
         </div>
 
-        <!-- Right Controls -->
-        <div class="flex items-center gap-1.5 sm:gap-2">
-          <button id="header-sleep-btn" class="px-2.5 py-1.5 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/30 text-xs font-bold flex items-center gap-1">
-            <i class="fa-solid fa-moon"></i>
+        <!-- Quick Header Controls -->
+        <div class="flex items-center gap-2">
+          <button id="header-sleep-btn" class="px-3 py-1.5 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 text-amber-900 border border-amber-500/30 text-xs font-bold flex items-center gap-1.5 transition">
+            <i class="fa-solid fa-moon text-amber-600"></i>
             <span id="header-sleep-label">المؤقت</span>
           </button>
-          <button id="toggle-player-skin-btn" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1 border border-morocco-border bg-morocco-card text-slate-200">
-            <i class="fa-solid fa-wand-magic-sparkles text-emerald-400"></i>
-            <span id="skin-mode-label" class="hidden sm:inline">2027</span>
+          <button id="header-mahmoud-btn" class="px-3 py-1.5 rounded-xl bg-sky-500/15 hover:bg-sky-500/25 text-sky-800 border border-sky-500/30 text-xs font-bold hidden sm:flex items-center gap-1.5 transition">
+            <i class="fa-solid fa-star text-sky-600"></i>
+            <span>محمود الشحات أنور</span>
           </button>
         </div>
       </div>
 
-      <!-- Responsive Scrollable Navigation Tabs -->
-      <nav class="flex items-center gap-1 sm:gap-1.5 overflow-x-auto py-2 border-t border-morocco-border/50 text-xs sm:text-sm font-medium no-scrollbar">
-        <button data-tab="tab-radio" class="nav-tab active flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition whitespace-nowrap bg-morocco-green text-white">
-          <i class="fa-solid fa-radio"></i><span>الإذاعة 2027</span>
+      <!-- Glassy Navigation Pills -->
+      <nav class="flex items-center gap-1.5 overflow-x-auto py-2 border-t border-white/60 text-xs sm:text-sm font-semibold no-scrollbar">
+        <button data-tab="tab-radio" class="nav-tab active flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl transition whitespace-nowrap bg-gradient-to-r from-sky-500 to-emerald-500 text-white shadow-md">
+          <i class="fa-solid fa-radio"></i><span>الإذاعة والمشغل</span>
         </button>
-        <button data-tab="tab-smart-mushaf" class="nav-tab flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition whitespace-nowrap text-amber-300 hover:text-white hover:bg-morocco-card border border-amber-500/30 bg-amber-500/10">
-          <i class="fa-solid fa-microphone-lines"></i><span class="font-bold">المصحف الذكي (ورش)</span>
+        <button data-tab="tab-smart-mushaf" class="nav-tab flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl transition whitespace-nowrap bg-white/50 hover:bg-white/80 text-slate-700 border border-white/80">
+          <i class="fa-solid fa-microphone-lines text-amber-600"></i><span>المصحف الذكي (ورش)</span>
         </button>
-        <button data-tab="tab-quran" class="nav-tab flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition whitespace-nowrap text-slate-300 hover:text-white hover:bg-morocco-card">
-          <i class="fa-solid fa-book-quran text-emerald-400"></i><span>السور (60 حزباً)</span>
+        <button data-tab="tab-quran" class="nav-tab flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl transition whitespace-nowrap bg-white/50 hover:bg-white/80 text-slate-700 border border-white/80">
+          <i class="fa-solid fa-book-quran text-emerald-600"></i><span>السور (60 حزباً)</span>
         </button>
-        <button data-tab="tab-reciters" class="nav-tab flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition whitespace-nowrap text-slate-300 hover:text-white hover:bg-morocco-card">
-          <i class="fa-solid fa-users text-cyan-400"></i><span>القراء (<span id="nav-reciters-count">12</span>)</span>
+        <button data-tab="tab-reciters" class="nav-tab flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl transition whitespace-nowrap bg-white/50 hover:bg-white/80 text-slate-700 border border-white/80">
+          <i class="fa-solid fa-users text-sky-600"></i><span>القراء (<span id="nav-reciters-count">14</span>)</span>
         </button>
-        <button data-tab="tab-amdah" class="nav-tab flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition whitespace-nowrap text-slate-300 hover:text-white hover:bg-morocco-card">
-          <i class="fa-solid fa-music text-amber-400"></i><span>الأمداح (<span id="nav-amdah-count">10</span>)</span>
+        <button data-tab="tab-mahmoud" class="nav-tab flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl transition whitespace-nowrap bg-white/50 hover:bg-white/80 text-sky-800 border border-sky-200">
+          <i class="fa-solid fa-gem text-sky-600"></i><span>محمود الشحات أنور (<span id="nav-mahmoud-count">12</span>)</span>
         </button>
-        <button data-tab="tab-lectures" class="nav-tab flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition whitespace-nowrap text-slate-300 hover:text-white hover:bg-morocco-card">
-          <i class="fa-solid fa-chalkboard-user text-purple-400"></i><span>المحاضرات (<span id="nav-lectures-count">10</span>)</span>
+        <button data-tab="tab-amdah" class="nav-tab flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl transition whitespace-nowrap bg-white/50 hover:bg-white/80 text-slate-700 border border-white/80">
+          <i class="fa-solid fa-music text-amber-600"></i><span>الأمداح (<span id="nav-amdah-count">10</span>)</span>
         </button>
-        <button data-tab="tab-doroos" class="nav-tab flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition whitespace-nowrap text-slate-300 hover:text-white hover:bg-morocco-card">
-          <i class="fa-solid fa-graduation-cap text-indigo-400"></i><span>الدروس العلمية (<span id="nav-doroos-count">4</span>)</span>
+        <button data-tab="tab-lectures" class="nav-tab flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl transition whitespace-nowrap bg-white/50 hover:bg-white/80 text-slate-700 border border-white/80">
+          <i class="fa-solid fa-chalkboard-user text-purple-600"></i><span>المحاضرات (<span id="nav-lectures-count">10</span>)</span>
         </button>
-        <button data-tab="tab-adhkar" class="nav-tab flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition whitespace-nowrap text-slate-300 hover:text-white hover:bg-morocco-card">
-          <i class="fa-solid fa-kaaba text-teal-400"></i><span>الأذكار والأذان (<span id="nav-adhkar-count">2</span>)</span>
+        <button data-tab="tab-doroos" class="nav-tab flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl transition whitespace-nowrap bg-white/50 hover:bg-white/80 text-slate-700 border border-white/80">
+          <i class="fa-solid fa-graduation-cap text-indigo-600"></i><span>الدروس العلمية (<span id="nav-doroos-count">4</span>)</span>
         </button>
-        <button data-tab="tab-discovery" class="nav-tab flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition whitespace-nowrap text-slate-300 hover:text-white hover:bg-morocco-card">
-          <i class="fa-solid fa-robot text-rose-400"></i><span>AI والحفظ</span>
+        <button data-tab="tab-adhkar" class="nav-tab flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl transition whitespace-nowrap bg-white/50 hover:bg-white/80 text-slate-700 border border-white/80">
+          <i class="fa-solid fa-kaaba text-teal-600"></i><span>الأذكار والأذان (<span id="nav-adhkar-count">2</span>)</span>
+        </button>
+        <button data-tab="tab-discovery" class="nav-tab flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl transition whitespace-nowrap bg-white/50 hover:bg-white/80 text-slate-700 border border-white/80">
+          <i class="fa-solid fa-robot text-rose-500"></i><span>الحفظ الدائم</span>
         </button>
       </nav>
     </div>
   </header>
 
   <!-- MAIN VIEWPORT -->
-  <main class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-5 space-y-6">
+  <main class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 space-y-6">
 
     <!-- ==========================================
-         TAB 1: 2027 MODERN PLAYER + SPINNING PORTRAIT CD + SLEEP TIMER
+         TAB 1: GLASSY 2027 PLAYER (EXACTLY LIKE SCREENSHOT!)
          ========================================== -->
     <section id="tab-radio" class="tab-content space-y-6">
 
-      <div id="modern-player-skin" class="glass-2027 aurora-glow rounded-3xl p-4 sm:p-8 border border-white/10 max-w-4xl mx-auto relative overflow-hidden">
+      <!-- 3-Column Glassy Interface Player -->
+      <div class="glass-light rounded-[32px] p-5 sm:p-7 max-w-5xl mx-auto relative overflow-hidden">
         
-        <div class="flex flex-wrap items-center justify-between gap-2 mb-5">
+        <!-- Top Window Dots + Brand -->
+        <div class="flex items-center justify-between mb-5">
           <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span id="modern-type-badge" class="text-xs font-bold text-emerald-300">بث مباشر • تلاوة قرآنية</span>
+            <img src="data:image/jpeg;base64,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" alt="mp3 isslam" class="w-6 h-6 rounded-lg object-cover">
+            <span class="text-xs font-black text-slate-700 tracking-wide">mp3 isslam • Glassy Player</span>
           </div>
           <div class="flex items-center gap-2">
-            <button id="modern-sleep-toggle-btn" class="px-3 py-1 rounded-full bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 text-xs font-bold text-amber-300 flex items-center gap-1.5">
-              <i class="fa-solid fa-moon"></i>
-              <span id="modern-sleep-status-text">مؤقت النوم: إيقاف</span>
+            <button id="modern-sleep-toggle-btn" class="px-3 py-1 rounded-full bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 text-xs font-bold text-amber-900 flex items-center gap-1.5">
+              <i class="fa-solid fa-moon text-amber-600"></i>
+              <span id="modern-sleep-status-text">المؤقت: إيقاف</span>
             </button>
-            <button id="modern-speed-btn" class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-slate-300">1.0x</button>
-            <button id="modern-download-btn" class="w-8 h-8 rounded-full bg-white/5 border border-white/10 text-slate-300 flex items-center justify-center"><i class="fa-solid fa-arrow-down text-xs"></i></button>
+            <button id="modern-download-btn" class="w-7 h-7 rounded-full bg-white/70 hover:bg-white text-slate-700 flex items-center justify-center border border-white shadow-sm" title="تحميل">
+              <i class="fa-solid fa-arrow-down text-xs"></i>
+            </button>
           </div>
         </div>
 
-        <!-- Sleep Timer Panel -->
-        <div id="sleep-timer-panel" class="hidden mb-5 p-3.5 rounded-2xl bg-black/40 border border-amber-500/30 space-y-2.5">
+        <!-- Expandable Sleep Timer Panel -->
+        <div id="sleep-timer-panel" class="hidden mb-5 p-3.5 rounded-2xl bg-white/75 border border-amber-300 space-y-2.5 shadow-sm">
           <div class="flex items-center justify-between text-xs">
-            <span class="font-bold text-amber-300"><i class="fa-solid fa-clock ml-1"></i>إيقاف التشغيل تلقائياً بعد:</span>
-            <button id="sleep-cancel-btn" class="text-rose-400 font-bold">إلغاء المؤقت</button>
+            <span class="font-bold text-amber-900"><i class="fa-solid fa-clock ml-1"></i>إيقاف التشغيل تلقائياً بعد:</span>
+            <button id="sleep-cancel-btn" class="text-rose-600 font-bold">إلغاء المؤقت</button>
           </div>
           <div class="flex flex-wrap items-center gap-2">
-            <button data-mins="15" class="sleep-preset-btn px-3 py-1.5 rounded-xl bg-white/5 hover:bg-amber-500 hover:text-slate-950 text-xs font-bold">15 د</button>
-            <button data-mins="30" class="sleep-preset-btn px-3 py-1.5 rounded-xl bg-white/5 hover:bg-amber-500 hover:text-slate-950 text-xs font-bold">30 د</button>
-            <button data-mins="45" class="sleep-preset-btn px-3 py-1.5 rounded-xl bg-white/5 hover:bg-amber-500 hover:text-slate-950 text-xs font-bold">45 د</button>
-            <button data-mins="60" class="sleep-preset-btn px-3 py-1.5 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/40 hover:bg-amber-500 hover:text-slate-950 text-xs font-bold">⏰ ساعة (60 د)</button>
-            <button data-mins="120" class="sleep-preset-btn px-3 py-1.5 rounded-xl bg-white/5 hover:bg-amber-500 hover:text-slate-950 text-xs font-bold">ساعتان</button>
+            <button data-mins="15" class="sleep-preset-btn px-3 py-1.5 rounded-xl bg-white hover:bg-amber-500 hover:text-white text-slate-700 text-xs font-bold border border-slate-200">15 د</button>
+            <button data-mins="30" class="sleep-preset-btn px-3 py-1.5 rounded-xl bg-white hover:bg-amber-500 hover:text-white text-slate-700 text-xs font-bold border border-slate-200">30 د</button>
+            <button data-mins="45" class="sleep-preset-btn px-3 py-1.5 rounded-xl bg-white hover:bg-amber-500 hover:text-white text-slate-700 text-xs font-bold border border-slate-200">45 د</button>
+            <button data-mins="60" class="sleep-preset-btn px-3 py-1.5 rounded-xl bg-amber-500/20 text-amber-900 border border-amber-400 hover:bg-amber-500 hover:text-white text-xs font-bold">⏰ ساعة (60 د)</button>
+            <button data-mins="120" class="sleep-preset-btn px-3 py-1.5 rounded-xl bg-white hover:bg-amber-500 hover:text-white text-slate-700 text-xs font-bold border border-slate-200">ساعتان</button>
             <div class="flex items-center gap-1.5">
-              <input type="number" id="sleep-custom-input" min="1" max="600" placeholder="دقائق" class="w-16 bg-morocco-obsidian border border-white/15 rounded-xl px-2 py-1.5 text-xs text-white">
-              <button id="sleep-custom-set-btn" class="px-3 py-1.5 rounded-xl bg-morocco-green text-white text-xs font-bold">تفعيل</button>
+              <input type="number" id="sleep-custom-input" min="1" max="600" placeholder="دقائق" class="w-16 bg-white border border-slate-300 rounded-xl px-2 py-1.5 text-xs text-slate-800">
+              <button id="sleep-custom-set-btn" class="px-3 py-1.5 rounded-xl bg-emerald-600 text-white text-xs font-bold">تفعيل</button>
             </div>
           </div>
         </div>
 
-        <div class="flex flex-col md:flex-row items-center gap-6 sm:gap-8">
-          <!-- Rotating CD with Artist/Reciter Portrait -->
-          <div class="relative flex-shrink-0">
-            <div id="modern-disc-ring" class="w-36 h-36 sm:w-44 sm:h-44 rounded-full p-1.5 bg-gradient-to-tr from-morocco-green via-emerald-400 to-morocco-gold shadow-2xl spin-slow spin-paused relative">
-              <div class="w-full h-full rounded-full bg-morocco-obsidian overflow-hidden relative flex items-center justify-center border-2 border-white/10">
-                <img id="modern-disc-img" src="" alt="صورة القارئ" class="w-full h-full object-cover hidden">
-                <div id="modern-disc-fallback" class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-emerald-950 to-morocco-obsidian">
-                  <span id="modern-country-flag" class="text-4xl sm:text-5xl">🇲🇦</span>
-                  <span id="modern-disc-initials" class="text-xs font-bold text-amber-300 mt-1 px-2 text-center line-clamp-1">العيون الكوشي</span>
-                </div>
-                <!-- CD Center Spindle Hole -->
-                <div class="absolute w-7 h-7 rounded-full bg-morocco-obsidian border-2 border-morocco-gold/80 shadow-inner z-10"></div>
+        <!-- 3-COLUMN SCREENSHOT LAYOUT -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          
+          <!-- LEFT COLUMN: Artwork Card + Title + Scrubber -->
+          <div class="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-right space-y-3">
+            <div class="w-40 h-40 sm:w-44 sm:h-44 rounded-3xl overflow-hidden shadow-xl border-2 border-white bg-gradient-to-br from-sky-900 to-emerald-900 relative flex items-center justify-center">
+              <img id="modern-disc-img" src="" alt="صورة القارئ" class="w-full h-full object-cover spin-slow spin-paused">
+              <span id="modern-type-badge" class="absolute bottom-2 right-2 px-2 py-0.5 rounded-full bg-black/55 backdrop-blur-md text-[10px] text-white font-bold">تلاوة قرآنية</span>
+            </div>
+            <div class="w-full">
+              <h2 id="modern-surah-title" class="text-lg sm:text-xl font-black font-cairo text-slate-900 truncate">سورة الكهف</h2>
+              <p id="modern-reciter-name" class="text-xs sm:text-sm text-sky-700 font-semibold truncate">الشيخ العيون الكوشي • المغرب</p>
+              <div class="flex flex-wrap justify-center lg:justify-start gap-1.5 mt-1.5">
+                <span id="modern-riwayah-pill" class="text-[10px] px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-800 font-bold">ورش عن نافع</span>
+                <span id="modern-hizb-pill" class="text-[10px] px-2.5 py-0.5 rounded-full bg-sky-500/15 text-sky-800 font-bold">الحزب 31-32</span>
               </div>
             </div>
-            <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-morocco-obsidian/90 border border-white/15 flex items-end gap-1 h-6">
-              <div class="wave-bar-2027 w-1 h-2 rounded-full"></div>
-              <div class="wave-bar-2027 w-1 h-3 rounded-full"></div>
-              <div class="wave-bar-2027 w-1 h-4 rounded-full"></div>
-              <div class="wave-bar-2027 w-1 h-2 rounded-full"></div>
-              <div class="wave-bar-2027 w-1 h-3 rounded-full"></div>
-            </div>
-          </div>
-
-          <div class="flex-1 w-full space-y-4 text-center md:text-right">
-            <div>
-              <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-1.5">
-                <span id="modern-riwayah-pill" class="text-[11px] font-semibold px-3 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">ورش عن نافع</span>
-                <span id="modern-hizb-pill" class="text-[11px] font-semibold px-3 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30">الحزب 31-32</span>
-              </div>
-              <h2 id="modern-surah-title" class="text-xl sm:text-3xl font-black font-cairo text-white">سورة الكهف</h2>
-              <p id="modern-reciter-name" class="text-sm text-slate-300 mt-1 font-medium">الشيخ العيون الكوشي • المغرب</p>
-            </div>
-
-            <div class="space-y-1.5">
-              <input type="range" id="modern-seek-slider" min="0" max="100" value="0" class="w-full h-1.5 bg-white/10 rounded-full appearance-none cursor-pointer accent-emerald-400">
-              <div class="flex justify-between text-xs font-mono text-slate-400">
+            <!-- Scrubber -->
+            <div class="w-full space-y-1 pt-1">
+              <input type="range" id="modern-seek-slider" min="0" max="100" value="0" class="w-full h-1.5 bg-slate-300/70 rounded-full appearance-none cursor-pointer accent-sky-500">
+              <div class="flex justify-between text-[11px] font-mono text-slate-600 font-semibold">
                 <span id="modern-cur-time">00:00</span>
                 <span id="modern-total-time">00:00</span>
               </div>
             </div>
+          </div>
 
-            <div class="flex flex-wrap items-center justify-between gap-4 pt-1">
-              <div class="flex items-center gap-3 mx-auto md:mx-0">
-                <button id="modern-shuffle-btn" class="w-9 h-9 rounded-full bg-white/5 text-slate-400 hover:text-white flex items-center justify-center text-xs"><i class="fa-solid fa-shuffle"></i></button>
-                <button id="modern-prev-btn" class="w-11 h-11 rounded-full bg-white/5 text-slate-200 flex items-center justify-center"><i class="fa-solid fa-backward-step"></i></button>
-                <button id="modern-play-btn" class="w-14 h-14 rounded-full bg-gradient-to-tr from-morocco-green via-emerald-500 to-teal-400 text-white flex items-center justify-center shadow-xl"><i class="fa-solid fa-play text-xl"></i></button>
-                <button id="modern-next-btn" class="w-11 h-11 rounded-full bg-white/5 text-slate-200 flex items-center justify-center"><i class="fa-solid fa-forward-step"></i></button>
-                <button id="modern-repeat-btn" class="w-9 h-9 rounded-full bg-white/5 text-slate-400 hover:text-white flex items-center justify-center text-xs"><i class="fa-solid fa-repeat"></i></button>
+          <!-- CENTER COLUMN: Glowing Cyan Ring Waveform + Transport Buttons -->
+          <div class="lg:col-span-4 flex flex-col items-center justify-center space-y-5">
+            <!-- Glowing Ring Waveform Visualizer (Exact match to screenshot!) -->
+            <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-full bg-gradient-to-br from-slate-900 via-sky-950 to-slate-900 border-4 border-cyan-400 cyan-ring-glow flex items-center justify-center relative overflow-hidden p-3">
+              <canvas id="player-wave-canvas" width="200" height="200" class="w-full h-full"></canvas>
+            </div>
+
+            <!-- Glowing Cyan Transport Controls -->
+            <div class="flex items-center gap-4">
+              <button id="modern-prev-btn" class="w-10 h-10 rounded-full bg-white/80 hover:bg-white text-slate-700 shadow-md flex items-center justify-center transition"><i class="fa-solid fa-backward-step"></i></button>
+              <button id="modern-play-btn" class="w-14 h-14 rounded-full bg-gradient-to-tr from-cyan-400 to-sky-500 hover:scale-105 text-white shadow-lg shadow-cyan-400/50 flex items-center justify-center transition"><i class="fa-solid fa-play text-xl"></i></button>
+              <button id="modern-next-btn" class="w-10 h-10 rounded-full bg-white/80 hover:bg-white text-slate-700 shadow-md flex items-center justify-center transition"><i class="fa-solid fa-forward-step"></i></button>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: Glassy Side Panel (Queue + Equalizer/Volume + Quick Modes) -->
+          <div class="lg:col-span-4 bg-white/50 backdrop-blur-xl border border-white/80 rounded-2xl p-4 space-y-3 shadow-inner">
+            <div class="flex items-center justify-between border-b border-slate-200/70 pb-2">
+              <span class="text-xs font-bold text-slate-800 flex items-center gap-1.5"><i class="fa-solid fa-list-ul text-sky-600"></i> القائمة (<span id="modern-queue-count">5</span>)</span>
+              <div class="flex gap-1 text-[10px]">
+                <button id="quick-load-mahmoud-btn" class="px-2 py-0.5 rounded-full bg-sky-500/15 text-sky-800 font-bold">الشحات</button>
+                <button id="quick-load-warsh-btn" class="px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-800 font-bold">ورش</button>
+                <button id="quick-load-amdah-btn" class="px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-800 font-bold">أمداح</button>
               </div>
-              <div class="flex items-center gap-2 w-full sm:w-36 bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
-                <i class="fa-solid fa-volume-high text-emerald-400 text-xs"></i>
-                <input type="range" id="modern-volume-slider" min="0" max="100" value="85" class="w-full h-1.5 bg-white/20 rounded-full appearance-none cursor-pointer accent-amber-400">
+            </div>
+
+            <!-- Compact Queue Items -->
+            <div id="modern-playlist-items" class="space-y-1.5 max-h-36 overflow-y-auto pr-1"></div>
+
+            <!-- Equalizer / Volume & Speed -->
+            <div class="pt-2 border-t border-slate-200/70 space-y-2">
+              <div class="flex items-center justify-between text-[11px] font-bold text-slate-700">
+                <span>الصوت والسرعة</span>
+                <button id="modern-speed-btn" class="px-2 py-0.5 rounded-full bg-white text-sky-700 border border-slate-200 font-mono">1.0x</button>
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-volume-high text-sky-600 text-xs"></i>
+                <input type="range" id="modern-volume-slider" min="0" max="100" value="85" class="w-full h-1.5 bg-slate-300/80 rounded-full appearance-none cursor-pointer accent-sky-500">
+              </div>
+              <div class="flex items-center justify-between pt-1">
+                <button id="modern-shuffle-btn" class="p-2 rounded-xl bg-white/70 hover:bg-white text-slate-600 text-xs" title="خلط"><i class="fa-solid fa-shuffle"></i></button>
+                <button id="modern-repeat-btn" class="p-2 rounded-xl bg-white/70 hover:bg-white text-slate-600 text-xs" title="تكرار"><i class="fa-solid fa-repeat"></i></button>
+                <button id="quick-load-lectures-btn" class="px-2.5 py-1 rounded-xl bg-purple-500/15 text-purple-800 text-[11px] font-bold">محاضرات</button>
+                <button id="quick-load-adhkar-btn" class="px-2.5 py-1 rounded-xl bg-teal-500/15 text-teal-800 text-[11px] font-bold">أذكار</button>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="mt-6 pt-4 border-t border-white/10">
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-            <button id="modern-toggle-queue-btn" class="text-xs font-bold text-slate-300 flex items-center gap-2">
-              <i class="fa-solid fa-list-ul text-emerald-400"></i>
-              <span>قائمة البث (<span id="modern-queue-count">5</span>)</span>
-            </button>
-            <div class="flex flex-wrap gap-1.5 text-[11px]">
-              <button id="quick-load-warsh-btn" class="px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-300">قرآن ورش</button>
-              <button id="quick-load-amdah-btn" class="px-2.5 py-1 rounded-full bg-amber-500/15 text-amber-300">أمداح</button>
-              <button id="quick-load-lectures-btn" class="px-2.5 py-1 rounded-full bg-purple-500/15 text-purple-300">محاضرات</button>
-              <button id="quick-load-doroos-btn" class="px-2.5 py-1 rounded-full bg-indigo-500/15 text-indigo-300">دروس علمية</button>
-              <button id="quick-load-adhkar-btn" class="px-2.5 py-1 rounded-full bg-teal-500/15 text-teal-300">أذكار وأذان</button>
-            </div>
-          </div>
-          <div id="modern-playlist-items" class="space-y-1.5 max-h-52 overflow-y-auto pr-1"></div>
         </div>
       </div>
 
-      <!-- WINAMP OPTIONAL SKIN -->
-      <div id="winamp-player-skin" class="hidden winamp-chassis rounded-xl p-4 text-slate-200 max-w-4xl mx-auto">
-        <div class="winamp-display rounded-lg p-3 space-y-2 mb-3">
-          <div class="flex justify-between text-xs font-mono text-emerald-400">
-            <span id="winamp-state-indicator">READY</span>
-            <span id="winamp-hizb-display" class="text-amber-300">الحزب 31-32</span>
-          </div>
-          <div id="winamp-marquee-text" class="lcd-text text-xl font-bold whitespace-nowrap overflow-x-auto no-scrollbar">RADIO TILAWAT MAROC</div>
-          <div class="flex items-end justify-between">
-            <div><span id="winamp-time-display" class="lcd-text text-3xl font-bold">00:00</span> <span id="winamp-duration-display" class="text-xs font-mono text-emerald-600">/ 00:00</span></div>
-          </div>
-        </div>
-        <div class="flex items-center justify-between gap-2">
-          <div class="flex gap-2">
-            <button id="winamp-prev-btn" class="winamp-button px-3 py-1.5 rounded text-xs"><i class="fa-solid fa-backward-step"></i></button>
-            <button id="winamp-play-btn" class="winamp-button px-4 py-1.5 rounded text-emerald-400 text-xs font-bold"><i class="fa-solid fa-play"></i> PLAY</button>
-            <button id="winamp-stop-btn" class="winamp-button px-3 py-1.5 rounded text-red-400 text-xs"><i class="fa-solid fa-stop"></i></button>
-            <button id="winamp-next-btn" class="winamp-button px-3 py-1.5 rounded text-xs"><i class="fa-solid fa-forward-step"></i></button>
-          </div>
-          <input type="range" id="winamp-seek-slider" min="0" max="100" value="0" class="w-40 h-1.5 accent-emerald-500">
-        </div>
-      </div>
-
-      <!-- 4 RADIO STATIONS -->
+      <!-- 4 RADIO STATIONS (GLASSY CARDS) -->
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
-        <div class="channel-card cursor-pointer p-4 rounded-2xl bg-morocco-card border border-morocco-border hover:border-emerald-500/60" data-station="morocco-warsh">
+        <div class="channel-card cursor-pointer p-4 rounded-2xl glass-card hover:scale-[1.02] transition" data-station="morocco-warsh">
           <span class="text-2xl">🇲🇦</span>
-          <h4 class="font-bold text-white text-sm mt-2">إذاعة ورش المغربية</h4>
-          <p class="text-[11px] text-slate-400 mt-1">60 حزباً كاملاً بدون انقطاع</p>
+          <h4 class="font-bold text-slate-900 text-sm mt-2">إذاعة ورش المغربية</h4>
+          <p class="text-[11px] text-slate-600 mt-1">60 حزباً كاملاً بدون انقطاع</p>
         </div>
-        <div class="channel-card cursor-pointer p-4 rounded-2xl bg-morocco-card border border-morocco-border hover:border-amber-500/60" data-station="amdah-radio">
+        <div class="channel-card cursor-pointer p-4 rounded-2xl glass-card hover:scale-[1.02] transition" data-station="mahmoud-shahat">
+          <span class="text-2xl">🇪🇬</span>
+          <h4 class="font-bold text-slate-900 text-sm mt-2">إذاعة محمود الشحات أنور</h4>
+          <p class="text-[11px] text-slate-600 mt-1">روائع المحافل والتلاوات الخاشعة</p>
+        </div>
+        <div class="channel-card cursor-pointer p-4 rounded-2xl glass-card hover:scale-[1.02] transition" data-station="amdah-radio">
           <span class="text-2xl">🕌</span>
-          <h4 class="font-bold text-white text-sm mt-2">إذاعة الأمداح النبوية</h4>
-          <p class="text-[11px] text-slate-400 mt-1">ماهر زين ومغربية (300+)</p>
+          <h4 class="font-bold text-slate-900 text-sm mt-2">إذاعة الأمداح النبوية</h4>
+          <p class="text-[11px] text-slate-600 mt-1">ماهر زين وأمداح مغربية (300+)</p>
         </div>
-        <div class="channel-card cursor-pointer p-4 rounded-2xl bg-morocco-card border border-morocco-border hover:border-purple-500/60" data-station="lectures-radio">
+        <div class="channel-card cursor-pointer p-4 rounded-2xl glass-card hover:scale-[1.02] transition" data-station="lectures-radio">
           <span class="text-2xl">🎙️</span>
-          <h4 class="font-bold text-white text-sm mt-2">إذاعة المحاضرات</h4>
-          <p class="text-[11px] text-slate-400 mt-1">الكملي وزيد الخير (400+)</p>
-        </div>
-        <div class="channel-card cursor-pointer p-4 rounded-2xl bg-morocco-card border border-morocco-border hover:border-teal-500/60" data-station="adhkar-radio">
-          <span class="text-2xl">📿</span>
-          <h4 class="font-bold text-white text-sm mt-2">الأذكار والأذان</h4>
-          <p class="text-[11px] text-slate-400 mt-1">أذكار الصباح والمساء والأذان</p>
+          <h4 class="font-bold text-slate-900 text-sm mt-2">إذاعة المحاضرات والدروس</h4>
+          <p class="text-[11px] text-slate-600 mt-1">الكملي وزيد الخير (400+)</p>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         TAB 2: المصحف الذكي (SMART MUSHAF WARSH + AUDIO + HIFZ + VOICE RECOGNITION)
+         TAB 2: المصحف الذكي (SMART MUSHAF WARSH)
          ========================================== -->
     <section id="tab-smart-mushaf" class="tab-content hidden space-y-5">
-      <div class="glass-2027 rounded-3xl p-4 sm:p-6 border border-amber-500/30 space-y-4">
+      <div class="glass-card rounded-3xl p-5 space-y-4">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <span class="px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-[11px] font-bold">المصحف الذكي • مسموع ومكتوب برواية ورش</span>
-            <h3 class="text-xl sm:text-2xl font-black font-cairo text-white mt-1">القراءة، التتبع الصوتي، والحفظ والتحفيظ</h3>
+            <span class="px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-900 text-[11px] font-bold">المصحف الذكي • مسموع ومكتوب برواية ورش</span>
+            <h3 class="text-xl font-black font-cairo text-slate-900 mt-1">القراءة، التتبع الصوتي، والحفظ والتحفيظ</h3>
           </div>
-          <!-- Voice Recognition Button -->
-          <button id="smart-voice-btn" class="px-5 py-3 rounded-2xl bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-500 hover:to-amber-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg transition">
+          <button id="smart-voice-btn" class="px-5 py-3 rounded-2xl bg-gradient-to-r from-rose-500 to-amber-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg">
             <i class="fa-solid fa-microphone"></i>
-            <span id="smart-voice-btn-text">🎙️ ابدأ القراءة بالصوت (تتبع ذكي للآية)</span>
+            <span id="smart-voice-btn-text">🎙️ ابدأ القراءة بالصوت (تتبع ذكي)</span>
           </button>
         </div>
 
-        <!-- Voice Status & Result Box -->
-        <div id="smart-voice-status" class="hidden p-3.5 rounded-2xl bg-black/50 border border-emerald-500/40 text-xs space-y-1.5">
+        <div id="smart-voice-status" class="hidden p-3.5 rounded-2xl bg-emerald-50 border border-emerald-300 text-xs space-y-1.5">
           <div class="flex items-center justify-between">
-            <span class="text-emerald-400 font-bold flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span> جاري الاستماع لتلاوتك... اقرأ أي آية</span>
-            <button id="smart-voice-stop-btn" class="text-rose-400 font-bold">إيقاف الميكروفون</button>
+            <span class="text-emerald-800 font-bold flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span> جاري الاستماع لتلاوتك... اقرأ أي آية</span>
+            <button id="smart-voice-stop-btn" class="text-rose-600 font-bold">إيقاف الميكروفون</button>
           </div>
-          <p class="text-slate-300">النص الملتقط: <span id="smart-voice-transcript" class="text-amber-300 font-bold">...</span></p>
-          <p id="smart-voice-match" class="text-emerald-300 font-semibold"></p>
+          <p class="text-slate-700">النص الملتقط: <span id="smart-voice-transcript" class="text-amber-700 font-bold">...</span></p>
+          <p id="smart-voice-match" class="text-emerald-700 font-semibold"></p>
         </div>
 
-        <!-- Surah, Reciter & Hifz Controls -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
-          <select id="mushaf-surah-select" class="bg-morocco-surface border border-morocco-border rounded-xl px-3 py-2.5 text-white font-bold"></select>
-          <select id="mushaf-reciter-select" class="bg-morocco-surface border border-morocco-border rounded-xl px-3 py-2.5 text-amber-300 font-bold"></select>
-          <select id="mushaf-repeat-select" class="bg-morocco-surface border border-morocco-border rounded-xl px-3 py-2.5 text-emerald-300 font-bold">
-            <option value="1">تكرار الآية للتحفيظ: 1× (عادي)</option>
-            <option value="3">تكرار الآية للتحفيظ: 3×</option>
-            <option value="5">تكرار الآية للتحفيظ: 5×</option>
-            <option value="10">تكرار الآية للتحفيظ: 10×</option>
+          <select id="mushaf-surah-select" class="bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-slate-800 font-bold"></select>
+          <select id="mushaf-reciter-select" class="bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sky-800 font-bold"></select>
+          <select id="mushaf-repeat-select" class="bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-emerald-800 font-bold">
+            <option value="1">تكرار الآية: 1× (عادي)</option>
+            <option value="3">تكرار الآية: 3×</option>
+            <option value="5">تكرار الآية: 5×</option>
+            <option value="10">تكرار الآية: 10×</option>
           </select>
           <div class="flex gap-2">
-            <button id="mushaf-play-surah-btn" class="flex-1 py-2.5 rounded-xl bg-morocco-green hover:bg-emerald-500 text-white font-bold flex items-center justify-center gap-1.5">
-              <i class="fa-solid fa-play"></i><span>استماع للسورة</span>
-            </button>
-            <button id="mushaf-hifz-blur-btn" class="px-3 py-2.5 rounded-xl bg-purple-600/20 text-purple-300 border border-purple-500/40 font-bold" title="إخفاء الكلمات لاختبار الحفظ">
-              <i class="fa-solid fa-eye-slash"></i> اختبار الحفظ
-            </button>
+            <button id="mushaf-play-surah-btn" class="flex-1 py-2.5 rounded-xl bg-emerald-600 text-white font-bold flex items-center justify-center gap-1.5"><i class="fa-solid fa-play"></i> استماع</button>
+            <button id="mushaf-hifz-blur-btn" class="px-3 py-2.5 rounded-xl bg-purple-500/15 text-purple-800 border border-purple-300 font-bold"><i class="fa-solid fa-eye-slash"></i> اختبار الحفظ</button>
           </div>
         </div>
       </div>
 
-      <!-- Mushaf Reading Canvas -->
-      <div class="bg-[#0b131b] rounded-3xl p-5 sm:p-8 border-2 border-amber-500/30 shadow-2xl space-y-6">
-        <div class="text-center border-b border-amber-500/20 pb-4">
-          <h4 id="mushaf-display-title" class="text-2xl sm:text-3xl font-quran text-amber-300">سورة الفاتحة</h4>
-          <p id="mushaf-display-meta" class="text-xs text-slate-400 mt-1">مكية • 7 آيات • رواية ورش / الرسم العثماني</p>
-          <p class="text-lg sm:text-xl font-quran text-emerald-300 mt-3">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+      <div class="glass-light rounded-3xl p-5 sm:p-8 space-y-6">
+        <div class="text-center border-b border-slate-200 pb-4">
+          <h4 id="mushaf-display-title" class="text-2xl sm:text-3xl font-quran text-emerald-900">سورة الفاتحة</h4>
+          <p id="mushaf-display-meta" class="text-xs text-slate-500 mt-1">مكية • 7 آيات</p>
+          <p class="text-lg sm:text-xl font-quran text-sky-800 mt-3">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
         </div>
-
-        <div id="mushaf-ayahs-container" class="font-quran text-xl sm:text-2xl leading-[2.6] text-slate-100 text-justify space-y-3" dir="rtl">
-          <!-- Ayahs rendered dynamically -->
-        </div>
-
-        <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs">
-          <span class="text-slate-400">اضغط على أي آية للاستماع إليها مباشرة وتكرارها للحفظ</span>
-          <button id="mushaf-mark-memorized-btn" class="px-4 py-2 rounded-xl bg-emerald-600/20 text-emerald-300 border border-emerald-500/40 font-bold">
-            <i class="fa-solid fa-check-double ml-1"></i> تسجيل السورة في سجل الحفظ
-          </button>
+        <div id="mushaf-ayahs-container" class="font-quran text-xl sm:text-2xl leading-[2.6] text-slate-900 text-justify space-y-3" dir="rtl"></div>
+        <div class="pt-4 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs">
+          <span class="text-slate-500">اضغط على أي آية للاستماع إليها مباشرة وتكرارها للحفظ</span>
+          <button id="mushaf-mark-memorized-btn" class="px-4 py-2 rounded-xl bg-emerald-500/15 text-emerald-800 border border-emerald-400 font-bold">تسجيل السورة في سجل الحفظ</button>
         </div>
       </div>
     </section>
 
     <!-- TAB 3: SURAHS 60 AHZAB -->
     <section id="tab-quran" class="tab-content hidden space-y-5">
-      <div class="bg-morocco-card p-5 rounded-2xl border border-morocco-border space-y-4">
+      <div class="glass-card p-5 rounded-2xl space-y-4">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
-          <h3 class="text-xl font-bold font-cairo text-white">المصحف الشريف (114 سورة - 60 حزباً)</h3>
-          <select id="quran-active-reciter-select" class="bg-morocco-surface text-xs text-amber-300 font-bold border border-morocco-border rounded-xl px-3 py-2"></select>
+          <h3 class="text-xl font-bold font-cairo text-slate-900">المصحف الشريف (114 سورة - 60 حزباً)</h3>
+          <select id="quran-active-reciter-select" class="bg-white text-xs text-sky-800 font-bold border border-slate-200 rounded-xl px-3 py-2"></select>
         </div>
-        <input type="text" id="surah-search-input" placeholder="ابحث عن السورة..." class="w-full bg-morocco-surface border border-morocco-border rounded-xl px-4 py-2.5 text-sm text-white">
+        <input type="text" id="surah-search-input" placeholder="ابحث عن السورة..." class="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800">
         <div id="hizb-filter-buttons" class="flex flex-wrap gap-1.5">
-          <button data-hizb="all" class="hizb-btn active px-3 py-1 rounded-lg text-xs font-semibold bg-morocco-green text-white">الكل (114)</button>
-          <button data-hizb="1-10" class="hizb-btn px-2.5 py-1 rounded-lg text-xs bg-morocco-surface text-slate-300 border border-morocco-border">أحزاب 1-10</button>
-          <button data-hizb="11-20" class="hizb-btn px-2.5 py-1 rounded-lg text-xs bg-morocco-surface text-slate-300 border border-morocco-border">أحزاب 11-20</button>
-          <button data-hizb="21-30" class="hizb-btn px-2.5 py-1 rounded-lg text-xs bg-morocco-surface text-slate-300 border border-morocco-border">أحزاب 21-30</button>
-          <button data-hizb="31-40" class="hizb-btn px-2.5 py-1 rounded-lg text-xs bg-morocco-surface text-slate-300 border border-morocco-border">أحزاب 31-40</button>
-          <button data-hizb="41-50" class="hizb-btn px-2.5 py-1 rounded-lg text-xs bg-morocco-surface text-slate-300 border border-morocco-border">أحزاب 41-50</button>
-          <button data-hizb="51-60" class="hizb-btn px-2.5 py-1 rounded-lg text-xs bg-morocco-surface text-slate-300 border border-morocco-border">أحزاب 51-60</button>
-          <button data-hizb="juz-amma" class="hizb-btn px-3 py-1 rounded-lg text-xs bg-amber-500/20 text-amber-300 border border-amber-500/40">جزء عم</button>
+          <button data-hizb="all" class="hizb-btn active px-3 py-1 rounded-lg text-xs font-semibold bg-sky-600 text-white">الكل (114)</button>
+          <button data-hizb="1-10" class="hizb-btn px-2.5 py-1 rounded-lg text-xs bg-white text-slate-700 border border-slate-200">أحزاب 1-10</button>
+          <button data-hizb="11-20" class="hizb-btn px-2.5 py-1 rounded-lg text-xs bg-white text-slate-700 border border-slate-200">أحزاب 11-20</button>
+          <button data-hizb="21-30" class="hizb-btn px-2.5 py-1 rounded-lg text-xs bg-white text-slate-700 border border-slate-200">أحزاب 21-30</button>
+          <button data-hizb="31-40" class="hizb-btn px-2.5 py-1 rounded-lg text-xs bg-white text-slate-700 border border-slate-200">أحزاب 31-40</button>
+          <button data-hizb="41-50" class="hizb-btn px-2.5 py-1 rounded-lg text-xs bg-white text-slate-700 border border-slate-200">أحزاب 41-50</button>
+          <button data-hizb="51-60" class="hizb-btn px-2.5 py-1 rounded-lg text-xs bg-white text-slate-700 border border-slate-200">أحزاب 51-60</button>
+          <button data-hizb="juz-amma" class="hizb-btn px-3 py-1 rounded-lg text-xs bg-amber-500/20 text-amber-900 border border-amber-300">جزء عم</button>
         </div>
       </div>
       <div id="full-surahs-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"></div>
@@ -420,116 +391,137 @@
 
     <!-- TAB 4: RECITERS -->
     <section id="tab-reciters" class="tab-content hidden space-y-5">
-      <div class="bg-morocco-card p-5 rounded-2xl border border-morocco-border space-y-4">
+      <div class="glass-card p-5 rounded-2xl space-y-4">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
-          <h3 class="text-xl font-bold font-cairo text-white">موسوعة القراء (<span id="reciters-total-badge">12</span> قارئاً × 114 سورة)</h3>
-          <input type="text" id="reciters-search-input" placeholder="ابحث عن أي قارئ..." class="bg-morocco-surface border border-morocco-border rounded-xl px-4 py-2 text-sm text-white md:w-72">
+          <h3 class="text-xl font-bold font-cairo text-slate-900">موسوعة القراء (<span id="reciters-total-badge">14</span> قارئاً × 114 سورة)</h3>
+          <input type="text" id="reciters-search-input" placeholder="ابحث عن أي قارئ..." class="bg-white border border-slate-200 rounded-xl px-4 py-2 text-sm text-slate-800 md:w-72">
         </div>
         <div id="country-filter-chips" class="flex flex-wrap gap-2">
-          <button data-country="all" class="filter-chip active px-3 py-1 rounded-lg text-xs font-semibold bg-morocco-green text-white">🌍 الكل</button>
-          <button data-country="Morocco" class="filter-chip px-3 py-1 rounded-lg text-xs bg-morocco-surface text-slate-300 border border-morocco-border">🇲🇦 المغرب (ورش)</button>
-          <button data-country="warsh" class="filter-chip px-3 py-1 rounded-lg text-xs bg-morocco-surface text-slate-300 border border-morocco-border">⭐ رواية ورش</button>
-          <button data-country="hafs" class="filter-chip px-3 py-1 rounded-lg text-xs bg-morocco-surface text-slate-300 border border-morocco-border">📖 رواية حفص</button>
+          <button data-country="all" class="filter-chip active px-3 py-1 rounded-lg text-xs font-semibold bg-sky-600 text-white">🌍 الكل</button>
+          <button data-country="Morocco" class="filter-chip px-3 py-1 rounded-lg text-xs bg-white text-slate-700 border border-slate-200">🇲🇦 المغرب (ورش)</button>
+          <button data-country="warsh" class="filter-chip px-3 py-1 rounded-lg text-xs bg-white text-slate-700 border border-slate-200">⭐ رواية ورش</button>
+          <button data-country="hafs" class="filter-chip px-3 py-1 rounded-lg text-xs bg-white text-slate-700 border border-slate-200">📖 رواية حفص</button>
         </div>
       </div>
       <div id="reciters-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"></div>
     </section>
 
-    <!-- TAB 5: AMDAH (300+) -->
-    <section id="tab-amdah" class="tab-content hidden space-y-5">
-      <div class="glass-2027 rounded-2xl p-5 border border-white/10 space-y-4">
+    <!-- TAB 5: DEDICATED MAHMOUD AL-SHAHAT ANWAR PAGE (NEW!) -->
+    <section id="tab-mahmoud" class="tab-content hidden space-y-5">
+      <div class="glass-light rounded-2xl p-5 space-y-4">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
           <div>
-            <h3 class="text-xl font-black font-cairo text-white">موسوعة الأمداح والأناشيد (<span id="amdah-total-badge">10</span>)</h3>
-            <p class="text-xs text-slate-400">ماهر زين، أمداح مغربية والبردة، وموسوعة 666 نشيداً بدون موسيقى</p>
+            <span class="px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-800 text-[11px] font-bold">موسوعة التلاوات الصوتية والمرئية المحولة لـ MP3</span>
+            <h3 class="text-xl sm:text-2xl font-black font-cairo text-slate-900 mt-1">الشيخ محمود الشحات أنور ووالده الشيخ الشحات محمد أنور (<span id="mahmoud-total-badge">12</span>)</h3>
+            <p class="text-xs text-slate-600 mt-0.5">جميع المحافل النادرة والتلاوات المجودة الكاملة محولة لصوت نقي MP3</p>
           </div>
-          <button id="play-all-amdah-btn" class="px-5 py-2.5 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs"><i class="fa-solid fa-play ml-1"></i> تشغيل الكل</button>
+          <button id="play-all-mahmoud-btn" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-emerald-500 text-white font-bold text-xs shadow-md"><i class="fa-solid fa-play ml-1"></i> تشغيل الكل</button>
         </div>
-        <input type="text" id="amdah-search-input" placeholder="ابحث في المئات من الأمداح والأناشيد..." class="w-full bg-morocco-surface border border-morocco-border rounded-xl px-4 py-2.5 text-sm text-white">
+        <input type="text" id="mahmoud-search-input" placeholder="ابحث في تلاوات الشيخ محمود الشحات (الكهف، البقرة، يوسف، الإسراء، طه)..." class="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800">
+        <div id="mahmoud-filter-chips" class="flex flex-wrap gap-2">
+          <button data-mahmoud="all" class="mahmoud-chip active px-3.5 py-1.5 rounded-xl text-xs font-bold bg-sky-600 text-white">🌟 جميع التلاوات</button>
+          <button data-mahmoud="mahmoud" class="mahmoud-chip px-3.5 py-1.5 rounded-xl text-xs bg-white text-slate-700 border border-slate-200">🇪🇬 الشيخ محمود الشحات أنور</button>
+          <button data-mahmoud="shahat_father" class="mahmoud-chip px-3.5 py-1.5 rounded-xl text-xs bg-white text-slate-700 border border-slate-200">🕌 الشيخ الشحات محمد أنور (رحمه الله)</button>
+        </div>
+      </div>
+      <div id="mahmoud-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </section>
+
+    <!-- TAB 6: AMDAH (300+) -->
+    <section id="tab-amdah" class="tab-content hidden space-y-5">
+      <div class="glass-light rounded-2xl p-5 space-y-4">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div>
+            <h3 class="text-xl font-black font-cairo text-slate-900">موسوعة الأمداح والأناشيد (<span id="amdah-total-badge">10</span>)</h3>
+            <p class="text-xs text-slate-600">ماهر زين، أمداح مغربية والبردة، وموسوعة 666 نشيداً بدون موسيقى</p>
+          </div>
+          <button id="play-all-amdah-btn" class="px-5 py-2.5 rounded-xl bg-amber-500 text-white font-bold text-xs"><i class="fa-solid fa-play ml-1"></i> تشغيل الكل</button>
+        </div>
+        <input type="text" id="amdah-search-input" placeholder="ابحث في المئات من الأمداح والأناشيد..." class="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800">
         <div id="amdah-filter-chips" class="flex flex-wrap gap-2">
-          <button data-amdah="all" class="amdah-chip active px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500 text-slate-950">🌟 الكل</button>
-          <button data-amdah="maher_zain" class="amdah-chip px-3.5 py-1.5 rounded-xl text-xs bg-morocco-surface text-slate-300 border border-morocco-border">🎤 ماهر زين</button>
-          <button data-amdah="moroccan" class="amdah-chip px-3.5 py-1.5 rounded-xl text-xs bg-morocco-surface text-slate-300 border border-morocco-border">🇲🇦 أمداح مغربية</button>
-          <button data-amdah="mix" class="amdah-chip px-3.5 py-1.5 rounded-xl text-xs bg-morocco-surface text-slate-300 border border-morocco-border">🎧 ميكس أناشيد (300+)</button>
+          <button data-amdah="all" class="amdah-chip active px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500 text-white">🌟 الكل</button>
+          <button data-amdah="maher_zain" class="amdah-chip px-3.5 py-1.5 rounded-xl text-xs bg-white text-slate-700 border border-slate-200">🎤 ماهر زين</button>
+          <button data-amdah="moroccan" class="amdah-chip px-3.5 py-1.5 rounded-xl text-xs bg-white text-slate-700 border border-slate-200">🇲🇦 أمداح مغربية</button>
+          <button data-amdah="mix" class="amdah-chip px-3.5 py-1.5 rounded-xl text-xs bg-white text-slate-700 border border-slate-200">🎧 ميكس أناشيد (300+)</button>
         </div>
       </div>
       <div id="amdah-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
     </section>
 
-    <!-- TAB 6: LECTURES (400+) -->
+    <!-- TAB 7: LECTURES (400+) -->
     <section id="tab-lectures" class="tab-content hidden space-y-5">
-      <div class="glass-2027 rounded-2xl p-5 border border-white/10 space-y-4">
+      <div class="glass-light rounded-2xl p-5 space-y-4">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
           <div>
-            <h3 class="text-xl font-black font-cairo text-white">موسوعة المحاضرات (<span id="lectures-total-badge">10</span>)</h3>
-            <p class="text-xs text-slate-400">سعيد الكملي، مبروك زيد الخير، با العلوي، ياسين العمري، مصطفى بنحمزة، نبيل العوضي، محمد حسان، بدر المشاري</p>
+            <h3 class="text-xl font-black font-cairo text-slate-900">موسوعة المحاضرات (<span id="lectures-total-badge">10</span>)</h3>
+            <p class="text-xs text-slate-600">سعيد الكملي، مبروك زيد الخير، با العلوي، ياسين العمري، مصطفى بنحمزة، نبيل العوضي، محمد حسان، بدر المشاري</p>
           </div>
           <button id="play-all-lectures-btn" class="px-5 py-2.5 rounded-xl bg-purple-600 text-white font-bold text-xs"><i class="fa-solid fa-play ml-1"></i> تشغيل الكل</button>
         </div>
-        <input type="text" id="lectures-search-input" placeholder="ابحث في المئات من المحاضرات..." class="w-full bg-morocco-surface border border-morocco-border rounded-xl px-4 py-2.5 text-sm text-white">
+        <input type="text" id="lectures-search-input" placeholder="ابحث في المئات من المحاضرات..." class="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800">
         <div id="lectures-filter-chips" class="flex flex-wrap gap-2">
           <button data-sheikh="all" class="lecture-chip active px-3.5 py-1.5 rounded-xl text-xs font-bold bg-purple-600 text-white">🎙️ الكل</button>
-          <button data-sheikh="said_kamali" class="lecture-chip px-3.5 py-1.5 rounded-xl text-xs bg-morocco-surface text-slate-300 border border-morocco-border">🇲🇦 سعيد الكملي</button>
-          <button data-sheikh="mabrouk_zaid" class="lecture-chip px-3.5 py-1.5 rounded-xl text-xs bg-morocco-surface text-slate-300 border border-morocco-border">🇩🇿 مبروك زيد الخير</button>
-          <button data-sheikh="moroccan_scholars" class="lecture-chip px-3.5 py-1.5 rounded-xl text-xs bg-morocco-surface text-slate-300 border border-morocco-border">🇲🇦 با العلوي وشيوخ المغرب</button>
-          <button data-sheikh="international" class="lecture-chip px-3.5 py-1.5 rounded-xl text-xs bg-morocco-surface text-slate-300 border border-morocco-border">🌍 شيوخ المشرق (400+)</button>
+          <button data-sheikh="said_kamali" class="lecture-chip px-3.5 py-1.5 rounded-xl text-xs bg-white text-slate-700 border border-slate-200">🇲🇦 سعيد الكملي</button>
+          <button data-sheikh="mabrouk_zaid" class="lecture-chip px-3.5 py-1.5 rounded-xl text-xs bg-white text-slate-700 border border-slate-200">🇩🇿 مبروك زيد الخير</button>
+          <button data-sheikh="moroccan_scholars" class="lecture-chip px-3.5 py-1.5 rounded-xl text-xs bg-white text-slate-700 border border-slate-200">🇲🇦 با العلوي وشيوخ المغرب</button>
+          <button data-sheikh="international" class="lecture-chip px-3.5 py-1.5 rounded-xl text-xs bg-white text-slate-700 border border-slate-200">🌍 شيوخ المشرق (400+)</button>
         </div>
       </div>
       <div id="lectures-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
     </section>
 
-    <!-- TAB 7: DOROOS ENCYCLOPEDIA (NEW DEDICATED PAGE!) -->
+    <!-- TAB 8: DOROOS ENCYCLOPEDIA -->
     <section id="tab-doroos" class="tab-content hidden space-y-5">
-      <div class="glass-2027 rounded-2xl p-5 border border-white/10 space-y-4">
+      <div class="glass-light rounded-2xl p-5 space-y-4">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
           <div>
-            <h3 class="text-xl font-black font-cairo text-white">صفحة الدروس العلمية والموسوعة الشاملة (<span id="doroos-total-badge">4</span>)</h3>
-            <p class="text-xs text-slate-400">سلاسل علمية كاملة: تفسير القرآن الكريم، رياض الصالحين، الفقه المالكي، السيرة النبوية، علم المنطق</p>
+            <h3 class="text-xl font-black font-cairo text-slate-900">صفحة الدروس العلمية والموسوعة الشاملة (<span id="doroos-total-badge">4</span>)</h3>
+            <p class="text-xs text-slate-600">تفسير القرآن الكريم كاملاً، رياض الصالحين، الفقه المالكي، السيرة النبوية، علم المنطق</p>
           </div>
           <button id="play-all-doroos-btn" class="px-5 py-2.5 rounded-xl bg-indigo-600 text-white font-bold text-xs"><i class="fa-solid fa-play ml-1"></i> تشغيل السلاسل</button>
         </div>
-        <input type="text" id="doroos-search-input" placeholder="ابحث في الدروس والسلاسل العلمية (تفسير، رياض الصالحين، السيرة)..." class="w-full bg-morocco-surface border border-morocco-border rounded-xl px-4 py-2.5 text-sm text-white">
+        <input type="text" id="doroos-search-input" placeholder="ابحث في الدروس العلمية..." class="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800">
         <div id="doroos-filter-chips" class="flex flex-wrap gap-2">
           <button data-science="all" class="doroos-chip active px-3.5 py-1.5 rounded-xl text-xs font-bold bg-indigo-600 text-white">📚 كل العلوم</button>
-          <button data-science="tafseer" class="doroos-chip px-3.5 py-1.5 rounded-xl text-xs bg-morocco-surface text-slate-300 border border-morocco-border">📖 تفسير القرآن كاملاً</button>
-          <button data-science="hadith" class="doroos-chip px-3.5 py-1.5 rounded-xl text-xs bg-morocco-surface text-slate-300 border border-morocco-border">📜 رياض الصالحين والحديث</button>
-          <button data-science="fiqh" class="doroos-chip px-3.5 py-1.5 rounded-xl text-xs bg-morocco-surface text-slate-300 border border-morocco-border">⚖️ الفقه المالكي</button>
-          <button data-science="seerah" class="doroos-chip px-3.5 py-1.5 rounded-xl text-xs bg-morocco-surface text-slate-300 border border-morocco-border">🕌 السيرة النبوية</button>
+          <button data-science="tafseer" class="doroos-chip px-3.5 py-1.5 rounded-xl text-xs bg-white text-slate-700 border border-slate-200">📖 تفسير القرآن</button>
+          <button data-science="hadith" class="doroos-chip px-3.5 py-1.5 rounded-xl text-xs bg-white text-slate-700 border border-slate-200">📜 رياض الصالحين</button>
+          <button data-science="fiqh" class="doroos-chip px-3.5 py-1.5 rounded-xl text-xs bg-white text-slate-700 border border-slate-200">⚖️ الفقه المالكي</button>
+          <button data-science="seerah" class="doroos-chip px-3.5 py-1.5 rounded-xl text-xs bg-white text-slate-700 border border-slate-200">🕌 السيرة النبوية</button>
         </div>
       </div>
       <div id="doroos-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
     </section>
 
-    <!-- TAB 8: ADHKAR & ADHAN -->
+    <!-- TAB 9: ADHKAR & ADHAN -->
     <section id="tab-adhkar" class="tab-content hidden space-y-5">
-      <div class="glass-2027 rounded-2xl p-5 border border-white/10 space-y-4">
+      <div class="glass-light rounded-2xl p-5 space-y-4">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
-          <h3 class="text-xl font-black font-cairo text-white">موسوعة الأذكار والأذان (<span id="adhkar-total-badge">2</span>)</h3>
+          <h3 class="text-xl font-black font-cairo text-slate-900">موسوعة الأذكار والأذان (<span id="adhkar-total-badge">2</span>)</h3>
           <button id="play-all-adhkar-btn" class="px-5 py-2.5 rounded-xl bg-teal-600 text-white font-bold text-xs"><i class="fa-solid fa-play ml-1"></i> تشغيل الكل</button>
         </div>
-        <input type="text" id="adhkar-search-input" placeholder="ابحث في الأذكار أو الأذان..." class="w-full bg-morocco-surface border border-morocco-border rounded-xl px-4 py-2.5 text-sm text-white">
+        <input type="text" id="adhkar-search-input" placeholder="ابحث في الأذكار أو الأذان..." class="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800">
         <div id="adhkar-filter-chips" class="flex flex-wrap gap-2">
           <button data-adhkar="all" class="adhkar-chip active px-3.5 py-1.5 rounded-xl text-xs font-bold bg-teal-600 text-white">📿 الكل</button>
-          <button data-adhkar="adhkar" class="adhkar-chip px-3.5 py-1.5 rounded-xl text-xs bg-morocco-surface text-slate-300 border border-morocco-border">☀️ الأذكار وحصن المسلم</button>
-          <button data-adhkar="adhan" class="adhkar-chip px-3.5 py-1.5 rounded-xl text-xs bg-morocco-surface text-slate-300 border border-morocco-border">🕌 موسوعة الأذان</button>
+          <button data-adhkar="adhkar" class="adhkar-chip px-3.5 py-1.5 rounded-xl text-xs bg-white text-slate-700 border border-slate-200">☀️ الأذكار وحصن المسلم</button>
+          <button data-adhkar="adhan" class="adhkar-chip px-3.5 py-1.5 rounded-xl text-xs bg-white text-slate-700 border border-slate-200">🕌 موسوعة الأذان</button>
         </div>
       </div>
       <div id="adhkar-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
     </section>
 
-    <!-- TAB 9: AI & PERMANENT STORAGE -->
+    <!-- TAB 10: PERMANENT STORAGE & IMPORTER -->
     <section id="tab-discovery" class="tab-content hidden space-y-5">
-      <div class="bg-morocco-card rounded-2xl border border-morocco-border p-6 space-y-4">
-        <h3 class="font-bold text-white text-lg">إضافة وحفظ دائم للتلاوات والمحاضرات والأمداح</h3>
+      <div class="glass-card rounded-2xl p-6 space-y-4">
+        <h3 class="font-bold text-slate-900 text-lg">إضافة وحفظ دائم للتلاوات والمحاضرات والأمداح</h3>
         <div class="grid grid-cols-1 md:grid-cols-12 gap-3 text-xs">
-          <input type="text" id="yt-import-url" placeholder="رابط MP3 مباشر..." class="md:col-span-5 bg-morocco-surface border border-morocco-border rounded-xl px-3 py-2.5 text-white font-mono">
-          <input type="text" id="yt-import-reciter" placeholder="العنوان / اسم القارئ أو الشيخ..." class="md:col-span-4 bg-morocco-surface border border-morocco-border rounded-xl px-3 py-2.5 text-white">
-          <select id="yt-import-surah" class="md:col-span-3 bg-morocco-surface border border-morocco-border rounded-xl px-3 py-2.5 text-white"></select>
+          <input type="text" id="yt-import-url" placeholder="رابط MP3 مباشر..." class="md:col-span-5 bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-slate-800 font-mono">
+          <input type="text" id="yt-import-reciter" placeholder="العنوان / اسم القارئ أو الشيخ..." class="md:col-span-4 bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-slate-800">
+          <select id="yt-import-surah" class="md:col-span-3 bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-slate-800"></select>
         </div>
-        <button id="yt-run-import-btn" class="px-5 py-2.5 rounded-xl bg-red-600 text-white font-bold text-xs">حفظ دائم وتشغيل الآن</button>
+        <button id="yt-run-import-btn" class="px-5 py-2.5 rounded-xl bg-rose-600 text-white font-bold text-xs">حفظ دائم وتشغيل الآن</button>
       </div>
-      <div class="bg-morocco-card rounded-2xl border border-morocco-border p-5 space-y-3">
-        <h4 class="font-bold text-white text-sm">المحفوظات المضافة (<span id="custom-tracks-count">0</span>)</h4>
+      <div class="glass-card rounded-2xl p-5 space-y-3">
+        <h4 class="font-bold text-slate-900 text-sm">المحفوظات المضافة (<span id="custom-tracks-count">0</span>)</h4>
         <div id="custom-tracks-container" class="space-y-2"></div>
       </div>
     </section>
@@ -537,101 +529,93 @@
   </main>
 
   <!-- FOOTER DUA -->
-  <footer class="max-w-7xl mx-auto px-4 py-6 text-center text-xs text-slate-400 border-t border-morocco-border/50">
-    <p class="text-amber-300 font-amiri text-base font-bold mb-1">🤲 المرجو الدعاء لي ولوالديّ بالرحمة والمغفرة 🤲</p>
-    <p>Radio Tilawat Maroc 2027 • صدقة جارية</p>
+  <footer class="max-w-7xl mx-auto px-4 py-6 text-center text-xs text-slate-600 border-t border-white/70">
+    <p class="text-emerald-800 font-amiri text-base font-bold mb-1">🤲 المرجو الدعاء لي ولوالديّ بالرحمة والمغفرة 🤲</p>
+    <p>mp3 isslam • Radio Tilawat Maroc 2027 • صدقة جارية</p>
   </footer>
 
-  <!-- FLOATING BOTTOM PILL DOCK (WITH EASY VOLUME ON ALL DEVICES & PAGES!) -->
-  <div id="persistent-dock-player" class="fixed bottom-2 inset-x-2 sm:inset-x-6 z-50 max-w-5xl mx-auto rounded-2xl glass-2027 border border-white/15 px-3 sm:px-5 py-2.5 shadow-2xl">
+  <!-- FLOATING GLASSY BOTTOM PILL DOCK -->
+  <div id="persistent-dock-player" class="fixed bottom-2 inset-x-2 sm:inset-x-6 z-50 max-w-5xl mx-auto rounded-2xl glass-light px-3 sm:px-5 py-2.5 shadow-2xl">
     <div class="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
-      
       <div class="w-full sm:w-auto flex items-center justify-between gap-2.5">
         <div class="flex items-center gap-2.5 min-w-0 flex-1 cursor-pointer" id="dock-open-modal-trigger">
-          <div class="w-10 h-10 rounded-full p-0.5 bg-gradient-to-tr from-morocco-green to-morocco-gold flex-shrink-0 spin-slow spin-paused" id="dock-disc-ring">
-            <div class="w-full h-full rounded-full bg-morocco-obsidian flex items-center justify-center overflow-hidden">
-              <img id="dock-disc-img" src="" alt="" class="w-full h-full object-cover hidden">
-              <span id="dock-flag" class="text-lg">🇲🇦</span>
-            </div>
+          <div class="w-10 h-10 rounded-full p-0.5 bg-gradient-to-tr from-sky-400 to-emerald-400 flex-shrink-0 spin-slow spin-paused" id="dock-disc-ring">
+            <img id="dock-disc-img" src="data:image/jpeg;base64,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" alt="" class="w-full h-full rounded-full object-cover">
           </div>
           <div class="min-w-0">
-            <h4 id="dock-track-title" class="text-xs sm:text-sm font-bold text-white truncate">سورة الكهف</h4>
-            <p id="dock-reciter-name" class="text-[11px] text-emerald-300 truncate">الشيخ العيون الكوشي</p>
+            <h4 id="dock-track-title" class="text-xs sm:text-sm font-bold text-slate-900 truncate">سورة الكهف</h4>
+            <p id="dock-reciter-name" class="text-[11px] text-sky-700 truncate font-semibold">الشيخ العيون الكوشي</p>
           </div>
         </div>
-
-        <!-- Mobile Quick Transport -->
         <div class="flex sm:hidden items-center gap-2">
-          <button id="dock-prev-btn-m" class="text-slate-300 p-1.5"><i class="fa-solid fa-backward-step"></i></button>
-          <button id="dock-play-btn-m" class="w-9 h-9 rounded-full bg-morocco-green text-white flex items-center justify-center"><i class="fa-solid fa-play text-xs"></i></button>
-          <button id="dock-next-btn-m" class="text-slate-300 p-1.5"><i class="fa-solid fa-forward-step"></i></button>
+          <button id="dock-prev-btn-m" class="text-slate-700 p-1.5"><i class="fa-solid fa-backward-step"></i></button>
+          <button id="dock-play-btn-m" class="w-9 h-9 rounded-full bg-gradient-to-tr from-cyan-500 to-sky-500 text-white flex items-center justify-center"><i class="fa-solid fa-play text-xs"></i></button>
+          <button id="dock-next-btn-m" class="text-slate-700 p-1.5"><i class="fa-solid fa-forward-step"></i></button>
         </div>
       </div>
 
-      <!-- Center Desktop Transport & Scrubber -->
       <div class="w-full sm:flex-1 max-w-md flex flex-col items-center gap-1">
         <div class="hidden sm:flex items-center gap-4">
-          <button id="dock-prev-btn" class="text-slate-300 hover:text-white text-sm"><i class="fa-solid fa-backward-step"></i></button>
-          <button id="dock-play-btn" class="w-9 h-9 rounded-full bg-gradient-to-tr from-morocco-green to-emerald-400 text-white flex items-center justify-center shadow-lg"><i class="fa-solid fa-play text-sm"></i></button>
-          <button id="dock-next-btn" class="text-slate-300 hover:text-white text-sm"><i class="fa-solid fa-forward-step"></i></button>
+          <button id="dock-prev-btn" class="text-slate-700 hover:text-sky-600 text-sm"><i class="fa-solid fa-backward-step"></i></button>
+          <button id="dock-play-btn" class="w-9 h-9 rounded-full bg-gradient-to-tr from-cyan-400 to-sky-500 text-white flex items-center justify-center shadow-md"><i class="fa-solid fa-play text-sm"></i></button>
+          <button id="dock-next-btn" class="text-slate-700 hover:text-sky-600 text-sm"><i class="fa-solid fa-forward-step"></i></button>
         </div>
-        <div class="w-full flex items-center gap-2 text-[10px] font-mono text-slate-400">
+        <div class="w-full flex items-center gap-2 text-[10px] font-mono text-slate-600">
           <span id="dock-cur-time">00:00</span>
-          <input type="range" id="dock-seek-slider" min="0" max="100" value="0" class="w-full h-1 bg-white/15 rounded-full appearance-none cursor-pointer accent-emerald-400">
+          <input type="range" id="dock-seek-slider" min="0" max="100" value="0" class="w-full h-1 bg-slate-300/80 rounded-full appearance-none cursor-pointer accent-sky-500">
           <span id="dock-total-time">00:00</span>
         </div>
       </div>
 
-      <!-- Always-Visible Easy Volume Control + Sleep Timer -->
       <div class="w-full sm:w-auto flex items-center justify-between sm:justify-end gap-2">
-        <div class="flex items-center gap-1.5 flex-1 sm:w-28 bg-white/5 px-2.5 py-1 rounded-xl border border-white/10">
-          <button id="dock-mute-btn" class="text-emerald-400 text-xs"><i class="fa-solid fa-volume-high"></i></button>
-          <input type="range" id="dock-volume-slider" min="0" max="100" value="85" class="w-full h-1 bg-white/20 rounded-full appearance-none cursor-pointer accent-amber-400">
+        <div class="flex items-center gap-1.5 flex-1 sm:w-28 bg-white/70 px-2.5 py-1 rounded-xl border border-white">
+          <button id="dock-mute-btn" class="text-sky-600 text-xs"><i class="fa-solid fa-volume-high"></i></button>
+          <input type="range" id="dock-volume-slider" min="0" max="100" value="85" class="w-full h-1 bg-slate-300 rounded-full appearance-none cursor-pointer accent-sky-500">
         </div>
-        <button id="dock-sleep-btn" class="px-2.5 py-1.5 rounded-xl bg-amber-500/15 text-amber-300 text-xs border border-amber-500/30 font-mono">
+        <button id="dock-sleep-btn" class="px-2.5 py-1.5 rounded-xl bg-amber-500/20 text-amber-900 text-xs border border-amber-400 font-mono">
           <i class="fa-solid fa-moon"></i> <span id="dock-sleep-countdown" class="hidden"></span>
         </button>
-        <a id="dock-download-link" href="#" target="_blank" download class="p-2 rounded-xl bg-white/5 text-emerald-400 text-xs border border-white/10"><i class="fa-solid fa-download"></i></a>
+        <a id="dock-download-link" href="#" target="_blank" download class="p-2 rounded-xl bg-white/70 text-sky-700 text-xs border border-white"><i class="fa-solid fa-download"></i></a>
       </div>
     </div>
   </div>
 
-  <!-- HIJRI / GREGORIAN DATE CONVERTER MODAL -->
-  <div id="date-converter-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
-    <div class="glass-2027 border border-white/15 rounded-3xl max-w-md w-full p-6 space-y-4">
-      <div class="flex items-center justify-between border-b border-white/10 pb-3">
-        <h3 class="font-bold text-white text-base flex items-center gap-2"><i class="fa-solid fa-calendar-days text-amber-400"></i> محول التاريخ الميلادي ↔ الهجري</h3>
-        <button id="close-date-modal-btn" class="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
+  <!-- DATE CONVERTER MODAL -->
+  <div id="date-converter-modal" class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="glass-light rounded-3xl max-w-md w-full p-6 space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+        <h3 class="font-bold text-slate-900 text-base flex items-center gap-2"><i class="fa-solid fa-calendar-days text-amber-600"></i> محول التاريخ الميلادي ↔ الهجري</h3>
+        <button id="close-date-modal-btn" class="w-8 h-8 rounded-full bg-white text-slate-700 flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
       </div>
       <div class="space-y-3 text-xs">
-        <label class="block text-slate-300 font-semibold">أدخل أي تاريخ ميلادي (مثلاً: 10/12/2023):</label>
-        <input type="date" id="conv-gregorian-input" value="2023-12-10" class="w-full bg-morocco-obsidian border border-white/15 rounded-xl px-3 py-2.5 text-white font-mono">
-        <button id="conv-run-btn" class="w-full py-2.5 rounded-xl bg-morocco-green hover:bg-emerald-500 text-white font-bold">تحويل إلى التاريخ الهجري</button>
-        <div id="conv-result-box" class="p-4 rounded-2xl bg-black/40 border border-emerald-500/30 text-center space-y-1">
-          <p class="text-slate-400 text-[11px]">المقابل في التقويم الهجري:</p>
-          <p id="conv-hijri-output" class="text-lg font-bold text-amber-300 font-amiri">...</p>
-          <p id="conv-day-output" class="text-xs text-emerald-300">...</p>
+        <label class="block text-slate-700 font-semibold">أدخل أي تاريخ ميلادي (مثلاً: 10/12/2023):</label>
+        <input type="date" id="conv-gregorian-input" value="2023-12-10" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2.5 text-slate-800 font-mono">
+        <button id="conv-run-btn" class="w-full py-2.5 rounded-xl bg-sky-600 text-white font-bold">تحويل إلى التاريخ الهجري</button>
+        <div class="p-4 rounded-2xl bg-white/80 border border-emerald-300 text-center space-y-1">
+          <p class="text-slate-500 text-[11px]">المقابل في التقويم الهجري:</p>
+          <p id="conv-hijri-output" class="text-lg font-bold text-emerald-800 font-amiri">...</p>
+          <p id="conv-day-output" class="text-xs text-sky-700 font-semibold">...</p>
         </div>
       </div>
     </div>
   </div>
 
   <!-- RECITER MODAL -->
-  <div id="reciter-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-3">
-    <div class="glass-2027 border border-white/15 rounded-3xl max-w-3xl w-full max-h-[90vh] flex flex-col overflow-hidden">
-      <div class="p-4 border-b border-white/10 flex items-center justify-between">
+  <div id="reciter-modal" class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm hidden flex items-center justify-center p-3">
+    <div class="glass-light rounded-3xl max-w-3xl w-full max-h-[90vh] flex flex-col overflow-hidden">
+      <div class="p-4 border-b border-slate-200 flex items-center justify-between">
         <div class="flex items-center gap-3">
           <span class="text-3xl" id="modal-reciter-flag">🇲🇦</span>
-          <div><h3 id="modal-reciter-name" class="font-bold text-white text-lg"></h3><p id="modal-reciter-meta" class="text-xs text-emerald-300"></p></div>
+          <div><h3 id="modal-reciter-name" class="font-bold text-slate-900 text-lg"></h3><p id="modal-reciter-meta" class="text-xs text-emerald-700"></p></div>
         </div>
-        <button id="close-reciter-modal-btn" class="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
+        <button id="close-reciter-modal-btn" class="w-8 h-8 rounded-full bg-white text-slate-700 flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
       </div>
-      <div class="p-3 border-b border-white/10">
-        <input type="text" id="modal-surah-search" placeholder="ابحث في السور الـ 114..." class="w-full bg-morocco-obsidian/60 border border-white/10 rounded-xl px-3 py-2 text-xs text-white">
+      <div class="p-3 border-b border-slate-200">
+        <input type="text" id="modal-surah-search" placeholder="ابحث في السور الـ 114..." class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-800">
       </div>
       <div class="p-4 flex-1 overflow-y-auto space-y-2" id="modal-surahs-list"></div>
-      <div class="p-3 border-t border-white/10 flex justify-end">
-        <button id="modal-play-all-btn" class="px-4 py-2 rounded-xl bg-morocco-green text-white font-bold text-xs">تشغيل المصحف كاملاً</button>
+      <div class="p-3 border-t border-slate-200 flex justify-end">
+        <button id="modal-play-all-btn" class="px-4 py-2 rounded-xl bg-emerald-600 text-white font-bold text-xs">تشغيل المصحف كاملاً</button>
       </div>
     </div>
   </div>
@@ -646,7 +630,14 @@
     let ADHKAR_DB = [{"id": "ath_12", "title": "أذكار المساء كاملة بصوت خاشع", "reciter": "نخبة القراء", "category": "adhkar", "category_label": "أذكار المساء", "duration": "08:50", "flag": "📿", "url": "https://archive.org/download/way2sona_20160320_2316/athkar_12_Evening.mp3"}, {"id": "ath_25", "title": "أذكار الصباح - الشيخ ناصر العتيبي", "reciter": "الشيخ ناصر العتيبي", "category": "adhkar", "category_label": "أذكار الصباح", "duration": "06:15", "flag": "☀️", "url": "https://archive.org/download/way2sona_20160320_2316/athkar_25_3tibi-saba7.mp3"}];
     let DOROOS_DB = [{"id": "drs_1", "title": "شرح كتاب الصلاة (المجلس 1) - الفقه المالكي", "sheikh": "الشيخ سعيد الكملي", "science": "fiqh", "science_label": "الفقه المالكي", "duration": "42:15", "flag": "⚖️", "url": "https://archive.org/download/sharh_salat_resalah/01.mp3"}, {"id": "drs_2", "title": "شرح لامية العرب (المجلس 1) - الأدب واللغة", "sheikh": "الشيخ سعيد الكملي", "science": "arabic", "science_label": "اللغة والأدب", "duration": "01:08:20", "flag": "📜", "url": "https://archive.org/download/lamiat_arab/01.mp3"}, {"id": "drs_3", "title": "علم المنطق وضوابط التفكير (الدرس 1)", "sheikh": "د. مصطفى بنحمزة", "science": "thought", "science_label": "الفكر والمنطق", "duration": "48:30", "flag": "🧠", "url": "https://archive.org/download/mantiq_doroos/01.mp3"}, {"id": "drs_4", "title": "السيرة النبوية المطهرة (الدرس 1)", "sheikh": "الشيخ بدر المشاري", "science": "seerah", "science_label": "السيرة النبوية", "duration": "54:20", "flag": "🕌", "url": "https://archive.org/download/serat_alrasoul/001.mp3"}];
 
-    // Offline Built-In Surahs for Instant Smart Mushaf
+    // Mahmoud Al-Shahat Anwar & Father Al-Shahat Mohamed Anwar Seed (Auto-expanded via Archive.org!)
+    let MAHMOUD_DB = [
+      { id: "msh_1", title: "سورة الفاتحة - الشيخ محمود الشحات أنور", reciter: "الشيخ محمود الشحات أنور", group: "mahmoud", label: "تلاوة خاشعة", duration: "01:30", flag: "🇪🇬", url: "https://archive.org/download/026-s-20zzzzzzzzzzz/001%20s%201%20%D8%B3%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D9%81%D8%A7%D8%AA%D8%AD%D8%A9%20%D9%84%D9%84%D8%B4%D9%8A%D8%AE%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%20%D8%A7%D9%84%D8%B4%D8%AD%D8%A7%D8%AA%20%D8%A3%D9%86%D9%88%D8%B1%20%E2%9D%A4%EF%B8%8F%20%D8%AA%D9%84%D8%A7%D9%88%D8%A9%20%D8%AC%D9%85%D9%8A%D9%84%D8%A9%F0%9F%92%9C%F0%9F%92%9C.mp3" },
+      { id: "msh_2", title: "سورة الحج - الشيخ محمود الشحات أنور", reciter: "الشيخ محمود الشحات أنور", group: "mahmoud", label: "تلاوة محفل", duration: "04:15", flag: "🇪🇬", url: "https://archive.org/download/026-s-20zzzzzzzzzzz/028%20s%2022%20%D8%B3%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D8%AD%D8%AC.mp3" },
+      { id: "sh_f1", title: "من سورة التحريم - الشيخ الشحات محمد أنور", reciter: "الشيخ الشحات محمد أنور", group: "shahat_father", label: "تلاوة نادرة", duration: "08:00", flag: "🇪🇬", url: "https://archive.org/download/a0-ss-21aaaaaaaaaa/017%20s%2066%20%D9%85%D9%86%20%D8%A7%D9%84%D8%AA%D8%AD%D8%B1%D9%8A%D9%85.mp3" },
+      { id: "sh_f2", title: "من سورة الملك - الشيخ الشحات محمد أنور", reciter: "الشيخ الشحات محمد أنور", group: "shahat_father", label: "تلاوة نادرة", duration: "07:10", flag: "🇪🇬", url: "https://archive.org/download/a0-ss-21aaaaaaaaaa/018%20s%2067%20%D9%85%D9%86%20%D8%A7%D9%84%D9%85%D9%84%D9%83.mp3" }
+    ];
+
     const BUILTIN_AYAHS = {
       1: [
         { numberInSurah: 1, text: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ" },
@@ -662,21 +653,6 @@
         { numberInSurah: 2, text: "اللَّهُ الصَّمَدُ" },
         { numberInSurah: 3, text: "لَمْ يَلِدْ وَلَمْ يُولَدْ" },
         { numberInSurah: 4, text: "وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ" }
-      ],
-      113: [
-        { numberInSurah: 1, text: "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ" },
-        { numberInSurah: 2, text: "مِن شَرِّ مَا خَلَقَ" },
-        { numberInSurah: 3, text: "وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ" },
-        { numberInSurah: 4, text: "وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ" },
-        { numberInSurah: 5, text: "وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ" }
-      ],
-      114: [
-        { numberInSurah: 1, text: "قُلْ أَعُوذُ بِرَبِّ النَّاسِ" },
-        { numberInSurah: 2, text: "مَلِكِ النَّاسِ" },
-        { numberInSurah: 3, text: "إِلَٰهِ النَّاسِ" },
-        { numberInSurah: 4, text: "مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ" },
-        { numberInSurah: 5, text: "الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ" },
-        { numberInSurah: 6, text: "مِنَ الْجِنَّةِ وَالنَّاسِ" }
       ]
     };
 
@@ -695,15 +671,14 @@
       { id: "soufi", name_ar: "الشيخ عبد الرشيد صوفي", country: "Somalia", country_ar: "الصومال", flag: "🇸🇴", riwayah: "الدوري عن أبي عمرو", is_warsh: false, server_template: "https://server16.mp3quran.net/soufi/{num}.mp3" }
     ];
 
-    // Stylized Portrait SVG Generator for Spinning CD (Zero broken images!)
     function getPortraitDataUri(name, flag) {
-      const initials = (name || "تلاوة").replace(/الشيخ|الدكتور|د\.|ذ\.|الأستاذ/g, '').trim().slice(0, 14);
+      const clean = (name || "mp3 isslam").replace(/الشيخ|الدكتور|د\.|ذ\.|الأستاذ/g, '').trim().slice(0, 15);
       const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'>
-        <defs><radialGradient id='g' cx='50%' cy='50%' r='50%'><stop offset='0%' stop-color='#064e3b'/><stop offset='100%' stop-color='#070b10'/></radialGradient></defs>
-        <circle cx='100' cy='100' r='100' fill='url(%23g)'/>
-        <circle cx='100' cy='100' r='88' fill='none' stroke='%23e0a938' stroke-width='2' stroke-dasharray='6 4'/>
-        <text x='100' y='88' text-anchor='middle' font-size='44'>${flag || '🕌'}</text>
-        <text x='100' y='142' text-anchor='middle' fill='%23fde68a' font-family='Cairo,sans-serif' font-weight='bold' font-size='18'>${initials}</text>
+        <defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%' stop-color='#0284c7'/><stop offset='100%' stop-color='#059669'/></linearGradient></defs>
+        <rect width='200' height='200' fill='url(%23g)'/>
+        <circle cx='100' cy='100' r='82' fill='none' stroke='rgba(255,255,255,0.35)' stroke-width='2' stroke-dasharray='6 4'/>
+        <text x='100' y='88' text-anchor='middle' font-size='48'>${flag || '🕌'}</text>
+        <text x='100' y='142' text-anchor='middle' fill='#ffffff' font-family='Cairo,sans-serif' font-weight='bold' font-size='18'>${clean}</text>
       </svg>`;
       return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
     }
@@ -719,35 +694,13 @@
     function saveCustomTracks(t) { try { localStorage.setItem('tilawat_maroc_custom_v5', JSON.stringify(t)); } catch {} }
 
     const state = {
-      currentSkin: 'modern',
-      activeReciterIndex: 0,
-      currentTrack: null,
-      isPlaying: false,
-      volume: 0.85,
-      isMuted: false,
-      playbackRate: 1.0,
-      isRepeatOne: false,
-      isShuffle: false,
-      currentFilterCountry: 'all',
-      currentFilterHizb: 'all',
-      currentAmdahFilter: 'all',
-      currentLectureFilter: 'all',
-      currentDoroosFilter: 'all',
-      currentAdhkarFilter: 'all',
-      searchSurahQuery: '',
-      searchReciterQuery: '',
-      searchAmdahQuery: '',
-      searchLectureQuery: '',
-      searchDoroosQuery: '',
-      searchAdhkarQuery: '',
-      playlistQueue: [],
-      customTracks: loadSavedTracks(),
-      sleepRemainingSeconds: 0,
-      sleepIntervalId: null,
-      mushafSurah: 1,
-      mushafHifzBlur: false,
-      mushafAyahRepeat: 1,
-      mushafCurrentAyahs: []
+      activeReciterIndex: 0, currentTrack: null, isPlaying: false, volume: 0.85, isMuted: false,
+      playbackRate: 1.0, isRepeatOne: false, isShuffle: false,
+      currentFilterCountry: 'all', currentFilterHizb: 'all', currentMahmoudFilter: 'all',
+      currentAmdahFilter: 'all', currentLectureFilter: 'all', currentDoroosFilter: 'all', currentAdhkarFilter: 'all',
+      searchSurahQuery: '', searchReciterQuery: '', searchMahmoudQuery: '', searchAmdahQuery: '', searchLectureQuery: '', searchDoroosQuery: '', searchAdhkarQuery: '',
+      playlistQueue: [], customTracks: loadSavedTracks(), sleepRemainingSeconds: 0, sleepIntervalId: null,
+      mushafSurah: 1, mushafHifzBlur: false, mushafAyahRepeat: 1, mushafCurrentAyahs: []
     };
 
     const audio = document.getElementById('audio-engine');
@@ -755,11 +708,8 @@
     function showToast(msg, type = 'info') {
       const c = document.getElementById('toast-container');
       const d = document.createElement('div');
-      const cls = type === 'success' ? 'bg-emerald-950/95 text-emerald-200 border-emerald-500/40' :
-                  type === 'warning' ? 'bg-amber-950/95 text-amber-200 border-amber-500/40' :
-                  'bg-slate-900/95 text-slate-200 border-white/15';
-      d.className = `p-3 rounded-2xl border shadow-2xl flex items-center gap-2 text-xs font-semibold backdrop-blur-xl pointer-events-auto ${cls}`;
-      d.innerHTML = `<i class="fa-solid fa-circle-info text-emerald-400"></i> <span>${msg}</span>`;
+      d.className = `p-3 rounded-2xl border shadow-xl flex items-center gap-2 text-xs font-bold backdrop-blur-xl pointer-events-auto bg-white/90 border-sky-200 text-slate-800`;
+      d.innerHTML = `<i class="fa-solid fa-circle-info text-sky-600"></i> <span>${msg}</span>`;
       c.appendChild(d);
       setTimeout(() => d.remove(), 3500);
     }
@@ -767,124 +717,78 @@
     function formatTime(sec) {
       if (isNaN(sec) || sec < 0) return "00:00";
       const h = Math.floor(sec / 3600), m = Math.floor((sec % 3600) / 60), s = Math.floor(sec % 60);
-      if (h > 0) return `${h}:${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
-      return `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+      return h > 0 ? `${h}:${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}` : `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
     }
 
-    // --- HIJRI & GREGORIAN DATE + CONVERTER ---
     function updateLiveDates() {
       const now = new Date();
       try {
-        const hijri = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura', { day: 'numeric', month: 'long', year: 'numeric' }).format(now);
-        const greg = new Intl.DateTimeFormat('ar-MA', { day: 'numeric', month: 'long', year: 'numeric' }).format(now);
-        document.getElementById('live-hijri-date').textContent = hijri;
-        document.getElementById('live-gregorian-date').textContent = greg;
+        document.getElementById('live-hijri-date').textContent = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura', { day: 'numeric', month: 'long', year: 'numeric' }).format(now);
+        document.getElementById('live-gregorian-date').textContent = new Intl.DateTimeFormat('ar-MA', { day: 'numeric', month: 'long', year: 'numeric' }).format(now);
       } catch (e) {}
     }
 
     function convertGregorianToHijri(dateStr) {
-      const parts = dateStr.split('-');
-      if (parts.length !== 3) return;
-      const d = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10), 12, 0, 0);
+      const p = dateStr.split('-'); if (p.length !== 3) return;
+      const d = new Date(parseInt(p[0], 10), parseInt(p[1], 10) - 1, parseInt(p[2], 10), 12, 0, 0);
       try {
-        const hijri = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
-        const dayName = new Intl.DateTimeFormat('ar-MA', { weekday: 'long' }).format(d);
-        document.getElementById('conv-hijri-output').textContent = hijri;
-        document.getElementById('conv-day-output').textContent = `اليوم: ${dayName}`;
-      } catch (e) {
-        document.getElementById('conv-hijri-output').textContent = "تعذر التحويل";
-      }
+        document.getElementById('conv-hijri-output').textContent = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
+        document.getElementById('conv-day-output').textContent = `اليوم: ${new Intl.DateTimeFormat('ar-MA', { weekday: 'long' }).format(d)}`;
+      } catch (e) {}
     }
 
-    // --- SLEEP TIMER ---
     function setSleepTimer(minutes) {
       if (state.sleepIntervalId) clearInterval(state.sleepIntervalId);
       if (!minutes || minutes <= 0) { state.sleepRemainingSeconds = 0; updateSleepTimerUI(); return; }
-      state.sleepRemainingSeconds = minutes * 60;
-      updateSleepTimerUI();
-      showToast(`سيتم إيقاف الصوت بعد ${minutes} دقيقة`, "success");
+      state.sleepRemainingSeconds = minutes * 60; updateSleepTimerUI();
+      showToast(`سيتوقف التشغيل بعد ${minutes} دقيقة`, "success");
       document.getElementById('sleep-timer-panel').classList.add('hidden');
       state.sleepIntervalId = setInterval(() => {
         if (state.sleepRemainingSeconds <= 1) {
           clearInterval(state.sleepIntervalId); state.sleepIntervalId = null; state.sleepRemainingSeconds = 0;
           audio.pause(); state.isPlaying = false; updatePlayPauseButtons(); updateSleepTimerUI();
-          showToast("انتهى المؤقت! تم إيقاف التشغيل", "warning");
-          return;
+          showToast("انتهى المؤقت! تم إيقاف التشغيل", "warning"); return;
         }
-        state.sleepRemainingSeconds--;
-        updateSleepTimerUI();
+        state.sleepRemainingSeconds--; updateSleepTimerUI();
       }, 1000);
     }
 
     function updateSleepTimerUI() {
-      const mText = document.getElementById('modern-sleep-status-text');
-      const hLabel = document.getElementById('header-sleep-label');
-      const dCount = document.getElementById('dock-sleep-countdown');
+      const m = document.getElementById('modern-sleep-status-text'), h = document.getElementById('header-sleep-label'), dc = document.getElementById('dock-sleep-countdown');
       if (state.sleepRemainingSeconds > 0) {
         const str = formatTime(state.sleepRemainingSeconds);
-        mText.textContent = `مؤقت: ${str}`; hLabel.textContent = str; dCount.textContent = str; dCount.classList.remove('hidden');
-      } else {
-        mText.textContent = "مؤقت النوم: إيقاف"; hLabel.textContent = "المؤقت"; dCount.classList.add('hidden');
-      }
+        m.textContent = `مؤقت: ${str}`; h.textContent = str; dc.textContent = str; dc.classList.remove('hidden');
+      } else { m.textContent = "المؤقت: إيقاف"; h.textContent = "المؤقت"; dc.classList.add('hidden'); }
     }
 
-    // --- UNIFIED PLAYBACK ---
     function playUnifiedItem(item, autoPlay = true) {
       state.currentTrack = item;
       audio.src = item.audioUrl;
       audio.playbackRate = state.playbackRate;
       audio.volume = state.isMuted ? 0 : state.volume;
-      audio.onerror = () => {
-        if (state.playlistQueue.length > 1) {
-          showToast(`جاري الانتقال للمقطع التالي...`, 'warning');
-          setTimeout(playNextTrack, 900);
-        }
-      };
+      audio.onerror = () => { if (state.playlistQueue.length > 1) { showToast(`جاري الانتقال للتلاوة التالية...`, 'warning'); setTimeout(playNextTrack, 900); } };
       updatePlayerDisplays();
-      if (autoPlay) {
-        audio.play().then(() => { state.isPlaying = true; updatePlayPauseButtons(); startVisualizers(); }).catch(() => { state.isPlaying = false; updatePlayPauseButtons(); });
-      }
+      if (autoPlay) audio.play().then(() => { state.isPlaying = true; updatePlayPauseButtons(); }).catch(() => { state.isPlaying = false; updatePlayPauseButtons(); });
     }
 
-    function makeQuranItem(r, s) {
-      return { type: 'quran', typeLabel: 'تلاوة قرآنية', title: `سورة ${s.name_ar}`, subtitle: `${r.name_ar} • ${r.country_ar}`, ownerName: r.name_ar, badge1: r.riwayah, badge2: `الحزب ${s.hizb}`, flag: r.flag, audioUrl: getSurahAudioUrl(r, s.num) };
-    }
-    function makeAmdahItem(a) {
-      return { type: 'amdah', typeLabel: 'أمداح وأناشيد', title: a.title, subtitle: a.artist, ownerName: a.artist, badge1: a.category_label, badge2: a.duration || 'MP3', flag: a.flag, audioUrl: a.url };
-    }
-    function makeLectureItem(l) {
-      return { type: 'lecture', typeLabel: 'محاضرة علمية', title: l.title, subtitle: `${l.sheikh} • ${l.country}`, ownerName: l.sheikh, badge1: l.topic, badge2: l.duration || 'MP3', flag: l.flag, audioUrl: l.url };
-    }
-    function makeDoroosItem(d) {
-      return { type: 'doroos', typeLabel: 'درس علمي', title: d.title, subtitle: d.sheikh, ownerName: d.sheikh, badge1: d.science_label, badge2: d.duration || 'MP3', flag: d.flag, audioUrl: d.url };
-    }
-    function makeAdhkarItem(z) {
-      return { type: 'adhkar', typeLabel: 'أذكار وأذان', title: z.title, subtitle: z.reciter, ownerName: z.reciter, badge1: z.category_label, badge2: z.duration || 'MP3', flag: z.flag, audioUrl: z.url };
-    }
+    function makeQuranItem(r, s) { return { type: 'quran', typeLabel: 'تلاوة قرآنية', title: `سورة ${s.name_ar}`, subtitle: `${r.name_ar} • ${r.country_ar}`, ownerName: r.name_ar, badge1: r.riwayah, badge2: `الحزب ${s.hizb}`, flag: r.flag, audioUrl: getSurahAudioUrl(r, s.num) }; }
+    function makeMahmoudItem(m) { return { type: 'mahmoud', typeLabel: 'تلاوة مجودة نادرة', title: m.title, subtitle: m.reciter, ownerName: m.reciter, badge1: m.label, badge2: m.duration || 'MP3', flag: m.flag, audioUrl: m.url }; }
+    function makeAmdahItem(a) { return { type: 'amdah', typeLabel: 'أمداح وأناشيد', title: a.title, subtitle: a.artist, ownerName: a.artist, badge1: a.category_label, badge2: a.duration || 'MP3', flag: a.flag, audioUrl: a.url }; }
+    function makeLectureItem(l) { return { type: 'lecture', typeLabel: 'محاضرة علمية', title: l.title, subtitle: `${l.sheikh} • ${l.country}`, ownerName: l.sheikh, badge1: l.topic, badge2: l.duration || 'MP3', flag: l.flag, audioUrl: l.url }; }
+    function makeDoroosItem(d) { return { type: 'doroos', typeLabel: 'درس علمي', title: d.title, subtitle: d.sheikh, ownerName: d.sheikh, badge1: d.science_label, badge2: d.duration || 'MP3', flag: d.flag, audioUrl: d.url }; }
+    function makeAdhkarItem(z) { return { type: 'adhkar', typeLabel: 'أذكار وأذان', title: z.title, subtitle: z.reciter, ownerName: z.reciter, badge1: z.category_label, badge2: z.duration || 'MP3', flag: z.flag, audioUrl: z.url }; }
 
     function updatePlayerDisplays() {
-      const t = state.currentTrack;
-      if (!t) return;
+      const t = state.currentTrack; if (!t) return;
       document.getElementById('modern-type-badge').textContent = t.typeLabel;
       document.getElementById('modern-surah-title').textContent = t.title;
       document.getElementById('modern-reciter-name').textContent = t.subtitle;
       document.getElementById('modern-riwayah-pill').textContent = t.badge1;
       document.getElementById('modern-hizb-pill').textContent = t.badge2;
-      document.getElementById('modern-country-flag').textContent = t.flag;
-      document.getElementById('modern-disc-initials').textContent = t.ownerName || t.subtitle;
-
-      // Update Rotating CD Portrait Image!
       const portraitUri = getPortraitDataUri(t.ownerName || t.subtitle, t.flag);
-      const discImg = document.getElementById('modern-disc-img');
-      const dockImg = document.getElementById('dock-disc-img');
-      discImg.src = portraitUri; discImg.classList.remove('hidden');
-      document.getElementById('modern-disc-fallback').classList.add('hidden');
-      dockImg.src = portraitUri; dockImg.classList.remove('hidden');
-      document.getElementById('dock-flag').classList.add('hidden');
-
+      document.getElementById('modern-disc-img').src = portraitUri;
+      document.getElementById('dock-disc-img').src = portraitUri;
       document.getElementById('modern-download-btn').onclick = () => window.open(t.audioUrl, '_blank');
-      document.getElementById('winamp-marquee-text').textContent = `${t.title} - ${t.subtitle}`;
-      document.getElementById('winamp-hizb-display').textContent = t.badge2;
       document.getElementById('dock-track-title').textContent = t.title;
       document.getElementById('dock-reciter-name').textContent = t.subtitle;
       document.getElementById('dock-download-link').href = t.audioUrl;
@@ -892,19 +796,17 @@
     }
 
     function updatePlayPauseButtons() {
-      const iconPlay = '<i class="fa-solid fa-play"></i>', iconPause = '<i class="fa-solid fa-pause"></i>';
       document.getElementById('modern-play-btn').innerHTML = state.isPlaying ? '<i class="fa-solid fa-pause text-xl"></i>' : '<i class="fa-solid fa-play text-xl"></i>';
       document.getElementById('dock-play-btn').innerHTML = state.isPlaying ? '<i class="fa-solid fa-pause text-sm"></i>' : '<i class="fa-solid fa-play text-sm"></i>';
       document.getElementById('dock-play-btn-m').innerHTML = state.isPlaying ? '<i class="fa-solid fa-pause text-xs"></i>' : '<i class="fa-solid fa-play text-xs"></i>';
-      [document.getElementById('modern-disc-ring'), document.getElementById('dock-disc-ring')].forEach(el => {
+      [document.getElementById('modern-disc-img'), document.getElementById('dock-disc-ring')].forEach(el => {
         if (state.isPlaying) el.classList.remove('spin-paused'); else el.classList.add('spin-paused');
       });
-      document.getElementById('winamp-state-indicator').textContent = state.isPlaying ? 'PLAYING' : 'PAUSED';
     }
 
     function togglePlay() {
       if (!audio.src || !state.currentTrack) { playUnifiedItem(state.playlistQueue[0], true); return; }
-      if (audio.paused) audio.play().then(() => { state.isPlaying = true; updatePlayPauseButtons(); startVisualizers(); }).catch(() => {});
+      if (audio.paused) audio.play().then(() => { state.isPlaying = true; updatePlayPauseButtons(); }).catch(() => {});
       else { audio.pause(); state.isPlaying = false; updatePlayPauseButtons(); }
     }
 
@@ -923,37 +825,44 @@
       const c = document.getElementById('modern-playlist-items');
       document.getElementById('modern-queue-count').textContent = state.playlistQueue.length;
       c.innerHTML = '';
-      state.playlistQueue.slice(0, 30).forEach((item, idx) => {
+      state.playlistQueue.slice(0, 20).forEach((item, idx) => {
         const row = document.createElement('div');
-        row.className = `p-2 rounded-xl flex items-center justify-between cursor-pointer text-xs ${idx === 0 ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold' : 'bg-white/5 hover:bg-white/10 text-slate-300'}`;
-        row.innerHTML = `<div class="flex items-center gap-2 truncate"><span>${item.flag}</span><span class="truncate">${item.title} - ${item.subtitle}</span></div><span class="text-[10px] text-amber-300 font-mono">${item.badge2}</span>`;
+        row.className = `p-2 rounded-xl flex items-center justify-between cursor-pointer text-xs ${idx === 0 ? 'bg-sky-500/20 text-sky-900 border border-sky-400 font-bold' : 'bg-white/60 hover:bg-white text-slate-700'}`;
+        row.innerHTML = `<div class="flex items-center gap-2 truncate"><span>${item.flag}</span><span class="truncate">${item.title}</span></div><span class="text-[10px] text-emerald-700 font-mono">${item.badge2}</span>`;
         row.onclick = () => { const clicked = state.playlistQueue.splice(idx, 1)[0]; state.playlistQueue.unshift(clicked); playUnifiedItem(clicked, true); };
         c.appendChild(row);
       });
     }
 
-    let vizId = null;
-    function startVisualizers() {
-      if (vizId) cancelAnimationFrame(vizId);
-      const wb = document.querySelectorAll('.wave-bar-2027');
-      function loop() {
-        if (!state.isPlaying) { wb.forEach(b => b.style.height = '6px'); return; }
-        wb.forEach(b => b.style.height = `${Math.floor(Math.random() * 14) + 4}px`);
-        vizId = requestAnimationFrame(loop);
+    // Smooth Glowing Cyan Sine Waveform Canvas (Matches Screenshot!)
+    let wavePhase = 0;
+    function drawCenterWaveform() {
+      const canvas = document.getElementById('player-wave-canvas');
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        const w = canvas.width, h = canvas.height;
+        ctx.clearRect(0, 0, w, h);
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = '#38bdf8';
+        ctx.shadowColor = '#22d3ee';
+        ctx.shadowBlur = 12;
+        ctx.beginPath();
+        const amp = state.isPlaying ? 38 : 10;
+        for (let x = 0; x < w; x++) {
+          const normX = (x / w) * Math.PI * 2;
+          const env = Math.sin(x / w * Math.PI);
+          const y = h / 2 + Math.sin(normX * 3 + wavePhase) * amp * env * (state.isPlaying ? (0.7 + 0.3 * Math.sin(wavePhase * 1.7)) : 1);
+          if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+        wavePhase += state.isPlaying ? 0.14 : 0.03;
       }
-      loop();
+      requestAnimationFrame(drawCenterWaveform);
     }
 
-    // --- SMART MUSHAF (WARSH WRITTEN + AUDIO + HIFZ + VOICE RECOGNITION) ---
+    // Smart Mushaf
     function normalizeArabic(text) {
-      return (text || '')
-        .replace(/[\u064B-\u065F\u0670\u06D6-\u06ED]/g, '')
-        .replace(/[أإآٱ]/g, 'ا')
-        .replace(/ى/g, 'ي')
-        .replace(/ة/g, 'ه')
-        .replace(/[^\u0621-\u064A\s]/g, '')
-        .replace(/\s+/g, ' ')
-        .trim();
+      return (text || '').replace(/[\u064B-\u065F\u0670\u06D6-\u06ED]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه').replace(/[^\u0621-\u064A\s]/g, '').replace(/\s+/g, ' ').trim();
     }
 
     async function loadSmartMushafSurah(surahNum, highlightAyahNum = null) {
@@ -961,145 +870,72 @@
       document.getElementById('mushaf-surah-select').value = surahNum;
       const sInfo = ALL_SURAHS.find(x => x.num === surahNum) || ALL_SURAHS[0];
       document.getElementById('mushaf-display-title').textContent = `سورة ${sInfo.name_ar}`;
-      document.getElementById('mushaf-display-meta').textContent = `${sInfo.type} • ${sInfo.ayahs} آية • الحزب ${sInfo.hizb} • رواية ورش / الرسم العثماني`;
-
+      document.getElementById('mushaf-display-meta').textContent = `${sInfo.type} • ${sInfo.ayahs} آية • الحزب ${sInfo.hizb}`;
       const container = document.getElementById('mushaf-ayahs-container');
-      container.innerHTML = '<p class="text-center text-sm text-emerald-400">جاري تحميل الآيات المباركة...</p>';
-
-      let ayahs = BUILTIN_AYAHS[surahNum] || null;
-      let audioEditions = null;
-
+      container.innerHTML = '<p class="text-center text-sm text-sky-700">جاري تحميل الآيات...</p>';
+      let ayahs = BUILTIN_AYAHS[surahNum] || null, audioEditions = null;
       try {
         const res = await fetch(`https://api.alquran.cloud/v1/surah/${surahNum}/editions/quran-uthmani,ar.alafasy`);
-        if (res.ok) {
-          const json = await res.json();
-          if (json.data && json.data.length >= 2) {
-            ayahs = json.data[0].ayahs;
-            audioEditions = json.data[1].ayahs;
-          }
-        }
+        if (res.ok) { const j = await res.json(); if (j.data && j.data.length >= 2) { ayahs = j.data[0].ayahs; audioEditions = j.data[1].ayahs; } }
       } catch (e) {}
-
-      if (!ayahs) {
-        container.innerHTML = '<p class="text-center text-sm text-amber-300">يرجى الاتصال بالإنترنت لتحميل نص هذه السورة، أو الاستماع إليها عبر المشغل.</p>';
-        return;
-      }
-
-      state.mushafCurrentAyahs = ayahs;
-      container.innerHTML = '';
-
+      if (!ayahs) { container.innerHTML = '<p class="text-center text-sm text-amber-700">يرجى الاتصال بالإنترنت لتحميل نص هذه السورة.</p>'; return; }
+      state.mushafCurrentAyahs = ayahs; container.innerHTML = '';
       ayahs.forEach((a, idx) => {
         const span = document.createElement('span');
-        const isHighlighted = highlightAyahNum && a.numberInSurah === highlightAyahNum;
+        const isH = highlightAyahNum && a.numberInSurah === highlightAyahNum;
         span.id = `ayah-node-${a.numberInSurah}`;
-        span.className = `inline cursor-pointer px-1.5 py-0.5 rounded-lg transition hover:bg-emerald-500/20 ${state.mushafHifzBlur ? 'blur-ayah' : ''} ${isHighlighted ? 'bg-amber-500/30 text-amber-200 ring-2 ring-amber-400' : ''}`;
-        span.innerHTML = `${a.text} <span class="text-amber-400 text-base font-sans mx-1">﴿${a.numberInSurah}﴾</span> `;
-
+        span.className = `inline cursor-pointer px-1.5 py-0.5 rounded-lg transition hover:bg-sky-200/60 ${state.mushafHifzBlur ? 'blur-ayah' : ''} ${isH ? 'bg-amber-300/60 ring-2 ring-amber-500' : ''}`;
+        span.innerHTML = `${a.text} <span class="text-amber-700 text-base font-sans mx-1">﴿${a.numberInSurah}﴾</span> `;
         span.onclick = () => {
           if (state.mushafHifzBlur) span.classList.toggle('revealed');
-          const ayahAudioUrl = audioEditions && audioEditions[idx] ? audioEditions[idx].audio : `https://cdn.islamic.network/quran/audio/128/ar.alafasy/${a.number || (surahNum === 1 ? a.numberInSurah : 1)}.mp3`;
-          playAyahWithRepeat(ayahAudioUrl, sInfo.name_ar, a.numberInSurah);
+          const url = audioEditions && audioEditions[idx] ? audioEditions[idx].audio : `https://cdn.islamic.network/quran/audio/128/ar.alafasy/${a.number || 1}.mp3`;
+          let rem = state.mushafAyahRepeat;
+          audio.src = url;
+          audio.onended = () => { rem--; if (rem > 0) { audio.currentTime = 0; audio.play(); } };
+          audio.play().then(() => { state.isPlaying = true; updatePlayPauseButtons(); }).catch(() => {});
         };
         container.appendChild(span);
       });
-
-      if (highlightAyahNum) {
-        const target = document.getElementById(`ayah-node-${highlightAyahNum}`);
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
+      if (highlightAyahNum) { const el = document.getElementById(`ayah-node-${highlightAyahNum}`); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
     }
 
-    function playAyahWithRepeat(url, surahName, ayahNum) {
-      let remaining = state.mushafAyahRepeat;
-      document.querySelectorAll('#mushaf-ayahs-container > span').forEach(el => el.classList.remove('bg-emerald-500/30', 'ring-1', 'ring-emerald-400'));
-      const node = document.getElementById(`ayah-node-${ayahNum}`);
-      if (node) node.classList.add('bg-emerald-500/30', 'ring-1', 'ring-emerald-400');
-
-      const reciter = RECITERS_DB[parseInt(document.getElementById('mushaf-reciter-select').value, 10) || 0];
-      state.currentTrack = { type: 'quran', typeLabel: 'تحفيظ آية', title: `سورة ${surahName} - آية ${ayahNum}`, subtitle: `تكرار ${remaining}×`, ownerName: reciter.name_ar, badge1: 'المصحف الذكي', badge2: `آية ${ayahNum}`, flag: '📖', audioUrl: url };
-      updatePlayerDisplays();
-
-      audio.src = url;
-      audio.onended = () => {
-        remaining--;
-        if (remaining > 0) { audio.currentTime = 0; audio.play(); }
-      };
-      audio.play().then(() => { state.isPlaying = true; updatePlayPauseButtons(); }).catch(() => {});
-    }
-
-    // Voice Recognition Ayah & Surah Finder
     let recognition = null;
     function setupVoiceRecognition() {
-      const btn = document.getElementById('smart-voice-btn');
-      const statusBox = document.getElementById('smart-voice-status');
-      const transcriptEl = document.getElementById('smart-voice-transcript');
-      const matchEl = document.getElementById('smart-voice-match');
-
+      const btn = document.getElementById('smart-voice-btn'), box = document.getElementById('smart-voice-status');
       const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
       btn.onclick = () => {
-        if (!SpeechRec) {
-          showToast("متصفحك لا يدعم التعرف الصوتي، يرجى استخدام Chrome أو Edge", "warning");
-          return;
-        }
-        if (recognition) { try { recognition.stop(); } catch {} recognition = null; }
-        recognition = new SpeechRec();
-        recognition.lang = 'ar-MA';
-        recognition.continuous = true;
-        recognition.interimResults = false;
-
-        statusBox.classList.remove('hidden');
-        document.getElementById('smart-voice-btn-text').textContent = "جاري الاستماع... اقرأ الآن";
-
-        recognition.onresult = async (event) => {
-          const raw = event.results[event.results.length - 1][0].transcript;
-          transcriptEl.textContent = raw;
-          const norm = normalizeArabic(raw);
-          if (norm.length < 4) return;
-
-          // 1. Check current loaded surah first
-          let found = false;
+        if (!SpeechRec) return showToast("استعمل Chrome أو Edge للتعرف الصوتي", "warning");
+        if (recognition) { try { recognition.stop(); } catch {} }
+        recognition = new SpeechRec(); recognition.lang = 'ar-MA'; recognition.continuous = true;
+        box.classList.remove('hidden');
+        recognition.onresult = async (ev) => {
+          const raw = ev.results[ev.results.length - 1][0].transcript;
+          document.getElementById('smart-voice-transcript').textContent = raw;
+          const norm = normalizeArabic(raw); if (norm.length < 4) return;
           for (const a of state.mushafCurrentAyahs) {
             if (normalizeArabic(a.text).includes(norm)) {
-              matchEl.textContent = `✓ تم التعرف على الآية ${a.numberInSurah} في السورة الحالية`;
-              loadSmartMushafSurah(state.mushafSurah, a.numberInSurah);
-              found = true; break;
+              document.getElementById('smart-voice-match').textContent = `✓ الآية ${a.numberInSurah}`;
+              loadSmartMushafSurah(state.mushafSurah, a.numberInSurah); return;
             }
           }
-          if (found) return;
-
-          // 2. Search across entire Quran via AlQuran.cloud Search API!
           try {
             const res = await fetch(`https://api.alquran.cloud/v1/search/${encodeURIComponent(norm)}/all/ar`);
-            if (res.ok) {
-              const json = await res.json();
-              if (json.data && json.data.matches && json.data.matches.length > 0) {
-                const m = json.data.matches[0];
-                matchEl.textContent = `✓ تم التعرف: سورة ${m.surah.name} - الآية ${m.numberInSurah}`;
-                loadSmartMushafSurah(m.surah.number, m.numberInSurah);
-              }
-            }
+            if (res.ok) { const j = await res.json(); if (j.data && j.data.matches && j.data.matches.length) { const m = j.data.matches[0]; document.getElementById('smart-voice-match').textContent = `✓ سورة ${m.surah.name} - آية ${m.numberInSurah}`; loadSmartMushafSurah(m.surah.number, m.numberInSurah); } }
           } catch (e) {}
         };
-        recognition.onerror = () => { showToast("تأكد من السماح بالوصول للميكروفون", "warning"); };
         recognition.start();
       };
-
-      document.getElementById('smart-voice-stop-btn').onclick = () => {
-        if (recognition) { try { recognition.stop(); } catch {} recognition = null; }
-        statusBox.classList.add('hidden');
-        document.getElementById('smart-voice-btn-text').textContent = "🎙️ ابدأ القراءة بالصوت (تتبع ذكي للآية)";
-      };
+      document.getElementById('smart-voice-stop-btn').onclick = () => { if (recognition) { try { recognition.stop(); } catch {} } box.classList.add('hidden'); };
     }
 
-    // --- MASSIVE ARCHIVE.ORG & MP3QURAN AUTO-EXPANSION (300+ AMDAH, 400+ LECTURES, 200+ RECITERS) ---
+    // Archive.org & MP3Quran Auto Expansion
     async function fetchArchiveMP3s(identifier, mapperFn, targetArray, onDone) {
       try {
         const res = await fetch(`https://archive.org/metadata/${identifier}`);
         if (!res.ok) return;
         const data = await res.json();
         if (!data.files) return;
-        const mp3s = data.files.filter(f => f.name && f.name.toLowerCase().endsWith('.mp3'));
-        mp3s.forEach((f, idx) => {
+        data.files.filter(f => f.name && f.name.toLowerCase().endsWith('.mp3')).forEach((f, idx) => {
           const url = `https://archive.org/download/${identifier}/${encodeURIComponent(f.name)}`;
           if (!targetArray.some(x => x.url === url)) {
             const cleanTitle = f.name.replace(/\.mp3$/i, '').replace(/[_-]+/g, ' ').trim();
@@ -1112,7 +948,7 @@
     }
 
     async function expandEncyclopediaLive() {
-      // 1. Quran Reciters (200+ reciters)
+      // 1. MP3Quran Reciters (200+)
       try {
         const res = await fetch('https://www.mp3quran.net/api/v3/reciters?language=ar');
         if (res.ok) {
@@ -1120,8 +956,7 @@
           if (data.reciters) {
             data.reciters.forEach(r => {
               if (!r.moshaf || !r.moshaf.length) return;
-              const m = r.moshaf[0];
-              if (!m.server || m.surah_total < 30) return;
+              const m = r.moshaf[0]; if (!m.server || m.surah_total < 30) return;
               const isWarsh = m.name && m.name.includes('ورش');
               if (!RECITERS_DB.some(x => x.name_ar === r.name)) {
                 RECITERS_DB.push({ id: `api_${r.id}`, name_ar: r.name, country: isWarsh ? "Morocco" : "Global", country_ar: isWarsh ? "المغرب الكبير" : "العالم الإسلامي", flag: isWarsh ? "🇲🇦" : "🌍", riwayah: m.name || "حفص عن عاصم", is_warsh: isWarsh, server_template: `${m.server}{num}.mp3` });
@@ -1134,11 +969,23 @@
         }
       } catch (e) {}
 
-      // 2. Amdah (300 - 700+ tracks!)
+      // 2. Mahmoud Al-Shahat Anwar & Father (Video-to-MP3 Collections!)
       [
-        { id: '666--anasheed---mp3----without---music---nashid---anashid----anashed-onshodah', artist: 'موسوعة الأناشيد الإسلامية (بدون موسيقى)', cat: 'mix', label: 'ميكس أناشيد', flag: '🌍' },
+        { id: '026-s-20zzzzzzzzzzz', reciter: 'الشيخ محمود الشحات أنور', group: 'mahmoud', label: 'تلاوة محفل HD', flag: '🇪🇬' },
+        { id: 'a0-ss-21aaaaaaaaaa', reciter: 'الشيخ الشحات محمد أنور', group: 'shahat_father', label: 'تلاوة نادرة', flag: '🇪🇬' }
+      ].forEach(col => {
+        fetchArchiveMP3s(col.id, (title, url, dur, idx) => ({ id: `${col.id}_${idx}`, title, reciter: col.reciter, group: col.group, label: col.label, duration: dur, flag: col.flag, url }), MAHMOUD_DB, () => {
+          renderMahmoudGrid();
+          document.getElementById('nav-mahmoud-count').textContent = MAHMOUD_DB.length;
+          document.getElementById('mahmoud-total-badge').textContent = MAHMOUD_DB.length;
+        });
+      });
+
+      // 3. Amdah (300+)
+      [
+        { id: '666--anasheed---mp3----without---music---nashid---anashid----anashed-onshodah', artist: 'موسوعة الأناشيد (بدون موسيقى)', cat: 'mix', label: 'ميكس أناشيد', flag: '🌍' },
         { id: 'way2sona_20160320_1800', artist: 'مشاري راشد العفاسي', cat: 'mix', label: 'أناشيد العفاسي', flag: '🇰🇼' },
-        { id: 'a7795440_gmail_20180329_1035', artist: 'السماع والمديح التراثي', cat: 'moroccan', label: 'أمداح مغربية والبردة', flag: '🇲🇦' },
+        { id: 'a7795440_gmail_20180329_1035', artist: 'السماع والمديح التراثي', cat: 'moroccan', label: 'أمداح مغربية', flag: '🇲🇦' },
         { id: 'rabieaaa2019_y42375457ahoo_Hd', artist: 'ألبومات العفاسي', cat: 'mix', label: 'ميكس أناشيد', flag: '🌍' }
       ].forEach(col => {
         fetchArchiveMP3s(col.id, (title, url, dur, idx) => ({ id: `${col.id}_${idx}`, title, artist: col.artist, category: col.cat, category_label: col.label, duration: dur, flag: col.flag, url }), AMDAH_DB, () => {
@@ -1148,18 +995,17 @@
         });
       });
 
-      // 3. Lectures (400 - 800+ tracks!)
+      // 4. Lectures (400+)
       [
-        { id: 'Mp3-___-----MAWSO3AH-428-BY-MOHAMMAD-HASSAN', sheikh: 'الشيخ محمد حسان (الموسوعة الشاملة)', group: 'international', country: 'مصر', flag: '🇪🇬', topic: 'محاضرات وخطب' },
-        { id: 'Lectures-by-Nabil-Al-Awadi', sheikh: 'الشيخ نبيل العوضي', group: 'international', country: 'الكويت', flag: '🇰🇼', topic: 'محاضرات مؤثرة' },
+        { id: 'Mp3-___-----MAWSO3AH-428-BY-MOHAMMAD-HASSAN', sheikh: 'الشيخ محمد حسان', group: 'international', country: 'مصر', flag: '🇪🇬', topic: 'محاضرات وخطب' },
+        { id: 'Lectures-by-Nabil-Al-Awadi', sheikh: 'الشيخ نبيل العوضي', group: 'international', country: 'الكويت', flag: '🇰🇼', topic: 'محاضرات' },
         { id: 'alomari', sheikh: 'الأستاذ ياسين العمري', group: 'moroccan_scholars', country: 'المغرب', flag: '🇲🇦', topic: 'دروس ومواعظ' },
-        { id: 'way_114_201604', sheikh: 'د. فريد الأنصاري رحمه الله', group: 'moroccan_scholars', country: 'المغرب', flag: '🇲🇦', topic: 'تزكية وفتاوى' },
-        { id: 'way_520', sheikh: 'الشيخ سعيد الكملي', group: 'said_kamali', country: 'المغرب', flag: '🇲🇦', topic: 'محاضرات متنوعة' },
+        { id: 'way_114_201604', sheikh: 'د. فريد الأنصاري', group: 'moroccan_scholars', country: 'المغرب', flag: '🇲🇦', topic: 'تزكية' },
+        { id: 'way_520', sheikh: 'الشيخ سعيد الكملي', group: 'said_kamali', country: 'المغرب', flag: '🇲🇦', topic: 'محاضرات' },
         { id: 'sharh_salat_resalah', sheikh: 'الشيخ سعيد الكملي', group: 'said_kamali', country: 'المغرب', flag: '🇲🇦', topic: 'الفقه المالكي' },
         { id: 'lamiat_arab', sheikh: 'الشيخ سعيد الكملي', group: 'said_kamali', country: 'المغرب', flag: '🇲🇦', topic: 'الأدب واللغة' },
         { id: 'mantiq_doroos', sheikh: 'د. مصطفى بنحمزة', group: 'moroccan_scholars', country: 'المغرب', flag: '🇲🇦', topic: 'العلم والفكر' },
-        { id: 'serat_alrasoul', sheikh: 'الشيخ بدر المشاري', group: 'international', country: 'السعودية', flag: '🇸🇦', topic: 'السيرة النبوية' },
-        { id: 'Lectures-saleh-maghamsi_mp3', sheikh: 'الشيخ صالح المغامسي', group: 'international', country: 'السعودية', flag: '🇸🇦', topic: 'رقائق وتدبر' }
+        { id: 'serat_alrasoul', sheikh: 'الشيخ بدر المشاري', group: 'international', country: 'السعودية', flag: '🇸🇦', topic: 'السيرة النبوية' }
       ].forEach(col => {
         fetchArchiveMP3s(col.id, (title, url, dur, idx) => ({ id: `${col.id}_${idx}`, title, sheikh: col.sheikh, sheikh_group: col.group, country: col.country, flag: col.flag, topic: col.topic, duration: dur, url }), LECTURES_DB, () => {
           renderLecturesGrid();
@@ -1168,12 +1014,10 @@
         });
       });
 
-      // 4. Doroos Scientific Encyclopedia (Tafseer, Riyadh Al-Salihin, Fiqh, Seerah)
+      // 5. Doroos & Adhkar
       [
-        { id: '008_20211107', sheikh: 'د. محمد إسماعيل المقدم', science: 'tafseer', label: 'تفسير القرآن الكريم', flag: '📖' },
-        { id: 'Riad_Alsalheen__AlDuraihim', sheikh: 'الشيخ حمد الدريهم', science: 'hadith', label: 'رياض الصالحين', flag: '📜' },
-        { id: 'sharh_salat_resalah', sheikh: 'الشيخ سعيد الكملي', science: 'fiqh', label: 'الفقه المالكي', flag: '⚖️' },
-        { id: 'serat_alrasoul', sheikh: 'الشيخ بدر المشاري', science: 'seerah', label: 'السيرة النبوية', flag: '🕌' }
+        { id: '008_20211107', sheikh: 'د. محمد إسماعيل المقدم', science: 'tafseer', label: 'تفسير القرآن', flag: '📖' },
+        { id: 'Riad_Alsalheen__AlDuraihim', sheikh: 'الشيخ حمد الدريهم', science: 'hadith', label: 'رياض الصالحين', flag: '📜' }
       ].forEach(col => {
         fetchArchiveMP3s(col.id, (title, url, dur, idx) => ({ id: `drs_${col.id}_${idx}`, title, sheikh: col.sheikh, science: col.science, science_label: col.label, duration: dur, flag: col.flag, url }), DOROOS_DB, () => {
           renderDoroosGrid();
@@ -1182,10 +1026,9 @@
         });
       });
 
-      // 5. Adhkar & Adhan
       [
-        { id: 'way2sona_20160320_2316', reciter: 'أذكار الصباح والمساء', cat: 'adhkar', label: 'أذكار الصباح والمساء', flag: '📿' },
-        { id: 'Husn_Muslim', reciter: 'حصن المسلم كاملاً', cat: 'adhkar', label: 'حصن المسلم', flag: '📖' },
+        { id: 'way2sona_20160320_2316', reciter: 'أذكار الصباح والمساء', cat: 'adhkar', label: 'أذكار', flag: '📿' },
+        { id: 'Husn_Muslim', reciter: 'حصن المسلم', cat: 'adhkar', label: 'حصن المسلم', flag: '📖' },
         { id: 'AdhaN_Divers_up-by-muslem', reciter: 'مؤذنو الحرمين والعالم', cat: 'adhan', label: 'الأذان', flag: '🕌' }
       ].forEach(col => {
         fetchArchiveMP3s(col.id, (title, url, dur, idx) => ({ id: `${col.id}_${idx}`, title, reciter: col.reciter, category: col.cat, category_label: col.label, duration: dur, flag: col.flag, url }), ADHKAR_DB, () => {
@@ -1198,19 +1041,15 @@
 
     function populateReciterSelects() {
       ['quran-active-reciter-select', 'mushaf-reciter-select'].forEach(id => {
-        const sel = document.getElementById(id);
-        const cur = sel.value || 0;
-        sel.innerHTML = '';
-        RECITERS_DB.forEach((r, i) => {
-          const o = document.createElement('option'); o.value = i; o.textContent = `${r.name_ar} (${r.riwayah})`; sel.appendChild(o);
-        });
+        const sel = document.getElementById(id), cur = sel.value || 0; sel.innerHTML = '';
+        RECITERS_DB.forEach((r, i) => { const o = document.createElement('option'); o.value = i; o.textContent = `${r.name_ar} (${r.riwayah})`; sel.appendChild(o); });
         sel.value = cur;
       });
     }
 
     function renderFullSurahsGrid() {
       const grid = document.getElementById('full-surahs-grid'); grid.innerHTML = '';
-      const activeReciter = RECITERS_DB[state.activeReciterIndex] || RECITERS_DB[0];
+      const r = RECITERS_DB[state.activeReciterIndex] || RECITERS_DB[0];
       ALL_SURAHS.filter(s => {
         if (state.searchSurahQuery.trim() && !s.name_ar.includes(state.searchSurahQuery) && String(s.num) !== state.searchSurahQuery.trim()) return false;
         if (state.currentFilterHizb === 'juz-amma') return s.num >= 78;
@@ -1222,11 +1061,11 @@
         if (state.currentFilterHizb === '51-60') return s.num >= 52;
         return true;
       }).forEach(s => {
-        const card = document.createElement('div');
-        card.className = "p-3.5 rounded-2xl bg-morocco-card border border-morocco-border flex flex-col justify-between";
-        card.innerHTML = `<div><div class="flex justify-between mb-2"><span class="w-7 h-7 rounded-lg bg-morocco-surface text-amber-400 font-bold text-xs flex items-center justify-center font-mono">${s.num}</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 font-mono">الحزب ${s.hizb}</span></div><h4 class="font-bold text-white text-base">سورة ${s.name_ar}</h4><p class="text-xs text-slate-400">${s.ayahs} آية • ${s.type}</p></div><div class="mt-3 pt-2 border-t border-morocco-border/50 flex items-center justify-between text-xs"><span class="text-slate-400 truncate max-w-[110px]">${activeReciter.name_ar}</span><button class="px-3 py-1.5 rounded-xl bg-morocco-green text-white font-semibold"><i class="fa-solid fa-play text-[10px]"></i> استماع</button></div>`;
-        card.querySelector('button').onclick = () => { const item = makeQuranItem(activeReciter, s); state.playlistQueue.unshift(item); playUnifiedItem(item, true); };
-        grid.appendChild(card);
+        const c = document.createElement('div');
+        c.className = "p-3.5 rounded-2xl glass-card flex flex-col justify-between";
+        c.innerHTML = `<div><div class="flex justify-between mb-2"><span class="w-7 h-7 rounded-lg bg-sky-500/15 text-sky-800 font-bold text-xs flex items-center justify-center font-mono">${s.num}</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-900 font-mono">الحزب ${s.hizb}</span></div><h4 class="font-bold text-slate-900 text-base">سورة ${s.name_ar}</h4><p class="text-xs text-slate-500">${s.ayahs} آية • ${s.type}</p></div><div class="mt-3 pt-2 border-t border-slate-200 flex items-center justify-between text-xs"><span class="text-slate-600 truncate max-w-[110px]">${r.name_ar}</span><button class="px-3 py-1.5 rounded-xl bg-emerald-600 text-white font-semibold"><i class="fa-solid fa-play text-[10px]"></i> استماع</button></div>`;
+        c.querySelector('button').onclick = () => { const item = makeQuranItem(r, s); state.playlistQueue.unshift(item); playUnifiedItem(item, true); };
+        grid.appendChild(c);
       });
     }
 
@@ -1239,11 +1078,11 @@
         if (state.searchReciterQuery.trim() && !r.name_ar.includes(state.searchReciterQuery.trim())) return false;
         return true;
       }).slice(0, 120).forEach(r => {
-        const card = document.createElement('div');
-        card.className = "bg-morocco-card rounded-2xl border border-morocco-border p-4 flex flex-col justify-between";
-        card.innerHTML = `<div><div class="flex justify-between mb-2"><span class="text-2xl">${r.flag}</span><span class="text-[10px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300">${r.riwayah}</span></div><h4 class="font-bold text-white text-sm">${r.name_ar}</h4><p class="text-xs text-slate-400">${r.country_ar}</p></div><div class="mt-4 pt-2 border-t border-morocco-border/50 flex items-center justify-between text-xs"><span class="text-emerald-400 font-bold">114 سورة</span><button class="px-3 py-1.5 rounded-xl bg-morocco-green text-white font-semibold">عرض السور</button></div>`;
-        card.querySelector('button').onclick = () => openReciterModal(r);
-        grid.appendChild(card);
+        const c = document.createElement('div');
+        c.className = "glass-card rounded-2xl p-4 flex flex-col justify-between";
+        c.innerHTML = `<div><div class="flex justify-between mb-2"><span class="text-2xl">${r.flag}</span><span class="text-[10px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-800">${r.riwayah}</span></div><h4 class="font-bold text-slate-900 text-sm">${r.name_ar}</h4><p class="text-xs text-slate-500">${r.country_ar}</p></div><div class="mt-4 pt-2 border-t border-slate-200 flex items-center justify-between text-xs"><span class="text-emerald-700 font-bold">114 سورة</span><button class="px-3 py-1.5 rounded-xl bg-sky-600 text-white font-semibold">عرض السور</button></div>`;
+        c.querySelector('button').onclick = () => openReciterModal(r);
+        grid.appendChild(c);
       });
     }
 
@@ -1251,15 +1090,14 @@
       document.getElementById('modal-reciter-name').textContent = reciter.name_ar;
       document.getElementById('modal-reciter-meta').textContent = `${reciter.country_ar} • ${reciter.riwayah}`;
       document.getElementById('modal-reciter-flag').textContent = reciter.flag;
-      const list = document.getElementById('modal-surahs-list'), search = document.getElementById('modal-surah-search');
-      search.value = '';
+      const list = document.getElementById('modal-surahs-list'), search = document.getElementById('modal-surah-search'); search.value = '';
       function render(q = '') {
         list.innerHTML = '';
         ALL_SURAHS.forEach(s => {
           if (q && !s.name_ar.includes(q) && !String(s.num).includes(q)) return;
           const row = document.createElement('div');
-          row.className = "p-2.5 rounded-xl bg-white/5 flex items-center justify-between text-xs";
-          row.innerHTML = `<div><span class="font-bold text-white">${s.num}. سورة ${s.name_ar}</span> <span class="text-slate-400 text-[10px]">(حزب ${s.hizb})</span></div><button class="px-3 py-1 rounded-lg bg-morocco-green text-white font-semibold">استماع</button>`;
+          row.className = "p-2.5 rounded-xl bg-white/80 flex items-center justify-between text-xs border border-slate-200";
+          row.innerHTML = `<div><span class="font-bold text-slate-900">${s.num}. سورة ${s.name_ar}</span> <span class="text-slate-500 text-[10px]">(حزب ${s.hizb})</span></div><button class="px-3 py-1 rounded-lg bg-emerald-600 text-white font-semibold">استماع</button>`;
           row.querySelector('button').onclick = () => { const item = makeQuranItem(reciter, s); state.playlistQueue.unshift(item); playUnifiedItem(item, true); document.getElementById('reciter-modal').classList.add('hidden'); };
           list.appendChild(row);
         });
@@ -1269,6 +1107,21 @@
       document.getElementById('reciter-modal').classList.remove('hidden');
     }
 
+    function renderMahmoudGrid() {
+      const grid = document.getElementById('mahmoud-grid'); grid.innerHTML = '';
+      MAHMOUD_DB.filter(m => {
+        if (state.currentMahmoudFilter !== 'all' && m.group !== state.currentMahmoudFilter) return false;
+        if (state.searchMahmoudQuery.trim() && !m.title.toLowerCase().includes(state.searchMahmoudQuery.toLowerCase())) return false;
+        return true;
+      }).forEach(m => {
+        const c = document.createElement('div');
+        c.className = "glass-card rounded-2xl p-4 flex flex-col justify-between";
+        c.innerHTML = `<div><div class="flex justify-between mb-2"><span class="text-2xl">${m.flag}</span><span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-sky-500/15 text-sky-800">${m.label}</span></div><h4 class="font-bold text-slate-900 text-sm leading-snug">${m.title}</h4><p class="text-xs text-emerald-700 font-semibold mt-1">${m.reciter}</p></div><div class="mt-4 pt-2 border-t border-slate-200 flex items-center justify-between text-xs"><span class="font-mono text-slate-500">${m.duration}</span><button class="px-3.5 py-1.5 rounded-xl bg-sky-600 text-white font-bold"><i class="fa-solid fa-play text-[10px]"></i> استماع</button></div>`;
+        c.querySelector('button').onclick = () => { const item = makeMahmoudItem(m); state.playlistQueue.unshift(item); playUnifiedItem(item, true); };
+        grid.appendChild(c);
+      });
+    }
+
     function renderAmdahGrid() {
       const grid = document.getElementById('amdah-grid'); grid.innerHTML = '';
       AMDAH_DB.filter(a => {
@@ -1276,11 +1129,11 @@
         if (state.searchAmdahQuery.trim() && !a.title.toLowerCase().includes(state.searchAmdahQuery.toLowerCase()) && !a.artist.toLowerCase().includes(state.searchAmdahQuery.toLowerCase())) return false;
         return true;
       }).slice(0, 180).forEach(a => {
-        const card = document.createElement('div');
-        card.className = "glass-2027 rounded-2xl p-4 border border-white/10 flex flex-col justify-between";
-        card.innerHTML = `<div><div class="flex justify-between mb-2"><span class="text-2xl">${a.flag}</span><span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-300">${a.category_label}</span></div><h4 class="font-bold text-white text-sm leading-snug">${a.title}</h4><p class="text-xs text-slate-400 mt-1">${a.artist}</p></div><div class="mt-4 pt-2 border-t border-white/10 flex items-center justify-between text-xs"><span class="font-mono text-slate-400">${a.duration}</span><button class="px-3.5 py-1.5 rounded-xl bg-amber-500 text-slate-950 font-bold"><i class="fa-solid fa-play text-[10px]"></i> استماع</button></div>`;
-        card.querySelector('button').onclick = () => { const item = makeAmdahItem(a); state.playlistQueue.unshift(item); playUnifiedItem(item, true); };
-        grid.appendChild(card);
+        const c = document.createElement('div');
+        c.className = "glass-card rounded-2xl p-4 flex flex-col justify-between";
+        c.innerHTML = `<div><div class="flex justify-between mb-2"><span class="text-2xl">${a.flag}</span><span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-900">${a.category_label}</span></div><h4 class="font-bold text-slate-900 text-sm leading-snug">${a.title}</h4><p class="text-xs text-slate-500 mt-1">${a.artist}</p></div><div class="mt-4 pt-2 border-t border-slate-200 flex items-center justify-between text-xs"><span class="font-mono text-slate-500">${a.duration}</span><button class="px-3.5 py-1.5 rounded-xl bg-amber-500 text-white font-bold"><i class="fa-solid fa-play text-[10px]"></i> استماع</button></div>`;
+        c.querySelector('button').onclick = () => { const item = makeAmdahItem(a); state.playlistQueue.unshift(item); playUnifiedItem(item, true); };
+        grid.appendChild(c);
       });
     }
 
@@ -1291,11 +1144,11 @@
         if (state.searchLectureQuery.trim() && !l.title.toLowerCase().includes(state.searchLectureQuery.toLowerCase()) && !l.sheikh.toLowerCase().includes(state.searchLectureQuery.toLowerCase())) return false;
         return true;
       }).slice(0, 180).forEach(l => {
-        const card = document.createElement('div');
-        card.className = "glass-2027 rounded-2xl p-4 border border-white/10 flex flex-col justify-between";
-        card.innerHTML = `<div><div class="flex justify-between mb-2"><span class="text-2xl">${l.flag}</span><span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-purple-500/15 text-purple-300">${l.topic}</span></div><h4 class="font-bold text-white text-sm leading-snug">${l.title}</h4><p class="text-xs text-emerald-300 font-semibold mt-1">${l.sheikh}</p></div><div class="mt-4 pt-2 border-t border-white/10 flex items-center justify-between text-xs"><span class="font-mono text-slate-400">${l.duration}</span><button class="px-3.5 py-1.5 rounded-xl bg-purple-600 text-white font-bold"><i class="fa-solid fa-play text-[10px]"></i> استماع</button></div>`;
-        card.querySelector('button').onclick = () => { const item = makeLectureItem(l); state.playlistQueue.unshift(item); playUnifiedItem(item, true); };
-        grid.appendChild(card);
+        const c = document.createElement('div');
+        c.className = "glass-card rounded-2xl p-4 flex flex-col justify-between";
+        c.innerHTML = `<div><div class="flex justify-between mb-2"><span class="text-2xl">${l.flag}</span><span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-purple-500/15 text-purple-800">${l.topic}</span></div><h4 class="font-bold text-slate-900 text-sm leading-snug">${l.title}</h4><p class="text-xs text-emerald-700 font-semibold mt-1">${l.sheikh}</p></div><div class="mt-4 pt-2 border-t border-slate-200 flex items-center justify-between text-xs"><span class="font-mono text-slate-500">${l.duration}</span><button class="px-3.5 py-1.5 rounded-xl bg-purple-600 text-white font-bold"><i class="fa-solid fa-play text-[10px]"></i> استماع</button></div>`;
+        c.querySelector('button').onclick = () => { const item = makeLectureItem(l); state.playlistQueue.unshift(item); playUnifiedItem(item, true); };
+        grid.appendChild(c);
       });
     }
 
@@ -1303,14 +1156,14 @@
       const grid = document.getElementById('doroos-grid'); grid.innerHTML = '';
       DOROOS_DB.filter(d => {
         if (state.currentDoroosFilter !== 'all' && d.science !== state.currentDoroosFilter) return false;
-        if (state.searchDoroosQuery.trim() && !d.title.toLowerCase().includes(state.searchDoroosQuery.toLowerCase()) && !d.sheikh.toLowerCase().includes(state.searchDoroosQuery.toLowerCase())) return false;
+        if (state.searchDoroosQuery.trim() && !d.title.toLowerCase().includes(state.searchDoroosQuery.toLowerCase())) return false;
         return true;
       }).slice(0, 180).forEach(d => {
-        const card = document.createElement('div');
-        card.className = "glass-2027 rounded-2xl p-4 border border-white/10 flex flex-col justify-between";
-        card.innerHTML = `<div><div class="flex justify-between mb-2"><span class="text-2xl">${d.flag}</span><span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-indigo-500/15 text-indigo-300">${d.science_label}</span></div><h4 class="font-bold text-white text-sm leading-snug">${d.title}</h4><p class="text-xs text-emerald-300 font-semibold mt-1">${d.sheikh}</p></div><div class="mt-4 pt-2 border-t border-white/10 flex items-center justify-between text-xs"><span class="font-mono text-slate-400">${d.duration}</span><button class="px-3.5 py-1.5 rounded-xl bg-indigo-600 text-white font-bold"><i class="fa-solid fa-play text-[10px]"></i> استماع</button></div>`;
-        card.querySelector('button').onclick = () => { const item = makeDoroosItem(d); state.playlistQueue.unshift(item); playUnifiedItem(item, true); };
-        grid.appendChild(card);
+        const c = document.createElement('div');
+        c.className = "glass-card rounded-2xl p-4 flex flex-col justify-between";
+        c.innerHTML = `<div><div class="flex justify-between mb-2"><span class="text-2xl">${d.flag}</span><span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-indigo-500/15 text-indigo-800">${d.science_label}</span></div><h4 class="font-bold text-slate-900 text-sm leading-snug">${d.title}</h4><p class="text-xs text-emerald-700 font-semibold mt-1">${d.sheikh}</p></div><div class="mt-4 pt-2 border-t border-slate-200 flex items-center justify-between text-xs"><span class="font-mono text-slate-500">${d.duration}</span><button class="px-3.5 py-1.5 rounded-xl bg-indigo-600 text-white font-bold"><i class="fa-solid fa-play text-[10px]"></i> استماع</button></div>`;
+        c.querySelector('button').onclick = () => { const item = makeDoroosItem(d); state.playlistQueue.unshift(item); playUnifiedItem(item, true); };
+        grid.appendChild(c);
       });
     }
 
@@ -1321,19 +1174,17 @@
         if (state.searchAdhkarQuery.trim() && !z.title.toLowerCase().includes(state.searchAdhkarQuery.toLowerCase())) return false;
         return true;
       }).slice(0, 150).forEach(z => {
-        const card = document.createElement('div');
-        card.className = "glass-2027 rounded-2xl p-4 border border-white/10 flex flex-col justify-between";
-        card.innerHTML = `<div><div class="flex justify-between mb-2"><span class="text-2xl">${z.flag}</span><span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-teal-500/15 text-teal-300">${z.category_label}</span></div><h4 class="font-bold text-white text-sm leading-snug">${z.title}</h4><p class="text-xs text-slate-400 mt-1">${z.reciter}</p></div><div class="mt-4 pt-2 border-t border-white/10 flex items-center justify-between text-xs"><span class="font-mono text-slate-400">${z.duration}</span><button class="px-3.5 py-1.5 rounded-xl bg-teal-600 text-white font-bold"><i class="fa-solid fa-play text-[10px]"></i> استماع</button></div>`;
-        card.querySelector('button').onclick = () => { const item = makeAdhkarItem(z); state.playlistQueue.unshift(item); playUnifiedItem(item, true); };
-        grid.appendChild(card);
+        const c = document.createElement('div');
+        c.className = "glass-card rounded-2xl p-4 flex flex-col justify-between";
+        c.innerHTML = `<div><div class="flex justify-between mb-2"><span class="text-2xl">${z.flag}</span><span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-teal-500/15 text-teal-800">${z.category_label}</span></div><h4 class="font-bold text-slate-900 text-sm leading-snug">${z.title}</h4><p class="text-xs text-slate-500 mt-1">${z.reciter}</p></div><div class="mt-4 pt-2 border-t border-slate-200 flex items-center justify-between text-xs"><span class="font-mono text-slate-500">${z.duration}</span><button class="px-3.5 py-1.5 rounded-xl bg-teal-600 text-white font-bold"><i class="fa-solid fa-play text-[10px]"></i> استماع</button></div>`;
+        c.querySelector('button').onclick = () => { const item = makeAdhkarItem(z); state.playlistQueue.unshift(item); playUnifiedItem(item, true); };
+        grid.appendChild(c);
       });
     }
 
     function setupYouTubeImporter() {
       const sel = document.getElementById('yt-import-surah');
-      [['amdah', 'أمداح / أناشيد'], ['lecture', 'محاضرة / درس'], ['adhkar', 'أذكار / أذان']].forEach(([v, txt]) => {
-        const o = document.createElement('option'); o.value = v; o.textContent = txt; sel.appendChild(o);
-      });
+      [['amdah', 'أمداح / أناشيد'], ['lecture', 'محاضرة / درس'], ['adhkar', 'أذكار / أذان']].forEach(([v, txt]) => { const o = document.createElement('option'); o.value = v; o.textContent = txt; sel.appendChild(o); });
       ALL_SURAHS.forEach(s => { const o = document.createElement('option'); o.value = s.num; o.textContent = `${s.num}. ${s.name_ar}`; sel.appendChild(o); });
       document.getElementById('yt-run-import-btn').onclick = () => {
         const url = document.getElementById('yt-import-url').value.trim(), name = document.getElementById('yt-import-reciter').value.trim() || "مقطع محفوظ";
@@ -1346,13 +1197,12 @@
     }
 
     function renderCustomTracks() {
-      const c = document.getElementById('custom-tracks-container');
-      document.getElementById('custom-tracks-count').textContent = state.customTracks.length;
+      const c = document.getElementById('custom-tracks-container'); document.getElementById('custom-tracks-count').textContent = state.customTracks.length;
       c.innerHTML = state.customTracks.length ? '' : '<p class="text-xs text-slate-500">لا توجد إضافات مخصصة بعد.</p>';
       state.customTracks.forEach((tr, i) => {
         const div = document.createElement('div');
-        div.className = "p-3 rounded-xl bg-morocco-surface border border-morocco-border flex items-center justify-between text-xs";
-        div.innerHTML = `<span class="font-bold text-white">${tr.title}</span><div class="flex gap-2"><button class="p-btn px-3 py-1 rounded-lg bg-morocco-green text-white">تشغيل</button><button class="d-btn px-2 py-1 rounded-lg bg-red-600/20 text-red-300"><i class="fa-solid fa-trash"></i></button></div>`;
+        div.className = "p-3 rounded-xl bg-white/80 border border-slate-200 flex items-center justify-between text-xs";
+        div.innerHTML = `<span class="font-bold text-slate-800">${tr.title}</span><div class="flex gap-2"><button class="p-btn px-3 py-1 rounded-lg bg-emerald-600 text-white">تشغيل</button><button class="d-btn px-2 py-1 rounded-lg bg-rose-100 text-rose-600"><i class="fa-solid fa-trash"></i></button></div>`;
         div.querySelector('.p-btn').onclick = () => playUnifiedItem({ type: 'custom', typeLabel: 'محفوظ', title: tr.title, subtitle: tr.subtitle, ownerName: tr.title, badge1: 'محفوظ', badge2: 'MP3', flag: '🌐', audioUrl: tr.audioUrl }, true);
         div.querySelector('.d-btn').onclick = () => { state.customTracks.splice(i, 1); saveCustomTracks(state.customTracks); renderCustomTracks(); };
         c.appendChild(div);
@@ -1365,28 +1215,26 @@
         const pct = dur > 0 ? (audio.currentTime / dur) * 100 : 0;
         document.getElementById('modern-cur-time').textContent = cStr; document.getElementById('modern-total-time').textContent = dStr; document.getElementById('modern-seek-slider').value = pct;
         document.getElementById('dock-cur-time').textContent = cStr; document.getElementById('dock-total-time').textContent = dStr; document.getElementById('dock-seek-slider').value = pct;
-        document.getElementById('winamp-time-display').textContent = cStr; document.getElementById('winamp-duration-display').textContent = `/ ${dStr}`; document.getElementById('winamp-seek-slider').value = pct;
       };
       audio.onended = () => { if (state.isRepeatOne) { audio.currentTime = 0; audio.play(); } else playNextTrack(); };
 
       document.querySelectorAll('.nav-tab').forEach(tab => {
         tab.onclick = () => {
-          document.querySelectorAll('.nav-tab').forEach(t => { t.classList.remove('active', 'bg-morocco-green', 'text-white'); });
-          tab.classList.add('active', 'bg-morocco-green', 'text-white');
+          document.querySelectorAll('.nav-tab').forEach(t => { t.classList.remove('active', 'bg-gradient-to-r', 'from-sky-500', 'to-emerald-500', 'text-white', 'shadow-md'); t.classList.add('bg-white/50', 'text-slate-700'); });
+          tab.classList.add('active', 'bg-gradient-to-r', 'from-sky-500', 'to-emerald-500', 'text-white', 'shadow-md'); tab.classList.remove('bg-white/50', 'text-slate-700');
           document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
           document.getElementById(tab.dataset.tab).classList.remove('hidden');
           window.scrollTo({ top: 0, behavior: 'smooth' });
         };
       });
       document.getElementById('nav-brand-click').onclick = () => document.querySelector('[data-tab="tab-radio"]').click();
+      document.getElementById('header-mahmoud-btn').onclick = () => document.querySelector('[data-tab="tab-mahmoud"]').click();
 
-      // Date Converter Modal
       document.getElementById('open-date-converter-btn').onclick = () => { document.getElementById('date-converter-modal').classList.remove('hidden'); convertGregorianToHijri(document.getElementById('conv-gregorian-input').value); };
       document.getElementById('close-date-modal-btn').onclick = () => document.getElementById('date-converter-modal').classList.add('hidden');
       document.getElementById('conv-run-btn').onclick = () => convertGregorianToHijri(document.getElementById('conv-gregorian-input').value);
       document.getElementById('conv-gregorian-input').onchange = e => convertGregorianToHijri(e.target.value);
 
-      // Sleep Timer
       ['modern-sleep-toggle-btn', 'header-sleep-btn', 'dock-sleep-btn'].forEach(id => {
         document.getElementById(id).onclick = () => { document.querySelector('[data-tab="tab-radio"]').click(); document.getElementById('sleep-timer-panel').classList.toggle('hidden'); };
       });
@@ -1394,20 +1242,11 @@
       document.getElementById('sleep-custom-set-btn').onclick = () => { const v = parseInt(document.getElementById('sleep-custom-input').value, 10); if (v > 0) setSleepTimer(v); };
       document.getElementById('sleep-cancel-btn').onclick = () => setSleepTimer(0);
 
-      // Skin switcher
-      document.getElementById('toggle-player-skin-btn').onclick = () => {
-        const m = document.getElementById('modern-player-skin'), w = document.getElementById('winamp-player-skin');
-        if (state.currentSkin === 'modern') { state.currentSkin = 'winamp'; m.classList.add('hidden'); w.classList.remove('hidden'); document.getElementById('skin-mode-label').textContent = 'Winamp'; }
-        else { state.currentSkin = 'modern'; w.classList.add('hidden'); m.classList.remove('hidden'); document.getElementById('skin-mode-label').textContent = '2027'; }
-      };
+      ['modern-play-btn', 'dock-play-btn', 'dock-play-btn-m'].forEach(id => document.getElementById(id).onclick = togglePlay);
+      ['modern-next-btn', 'dock-next-btn', 'dock-next-btn-m'].forEach(id => document.getElementById(id).onclick = playNextTrack);
+      ['modern-prev-btn', 'dock-prev-btn', 'dock-prev-btn-m'].forEach(id => document.getElementById(id).onclick = playPrevTrack);
 
-      // Transport & Easy Volume across all pages
-      ['modern-play-btn', 'dock-play-btn', 'dock-play-btn-m', 'winamp-play-btn'].forEach(id => document.getElementById(id).onclick = togglePlay);
-      document.getElementById('winamp-stop-btn').onclick = () => { audio.pause(); audio.currentTime = 0; state.isPlaying = false; updatePlayPauseButtons(); };
-      ['modern-next-btn', 'dock-next-btn', 'dock-next-btn-m', 'winamp-next-btn'].forEach(id => document.getElementById(id).onclick = playNextTrack);
-      ['modern-prev-btn', 'dock-prev-btn', 'dock-prev-btn-m', 'winamp-prev-btn'].forEach(id => document.getElementById(id).onclick = playPrevTrack);
-
-      ['modern-seek-slider', 'dock-seek-slider', 'winamp-seek-slider'].forEach(id => {
+      ['modern-seek-slider', 'dock-seek-slider'].forEach(id => {
         document.getElementById(id).oninput = e => { if (audio.duration) audio.currentTime = (e.target.value / 100) * audio.duration; };
       });
       ['modern-volume-slider', 'dock-volume-slider'].forEach(id => {
@@ -1419,73 +1258,57 @@
       });
       document.getElementById('dock-mute-btn').onclick = () => {
         state.isMuted = !state.isMuted; audio.volume = state.isMuted ? 0 : state.volume;
-        document.getElementById('dock-mute-btn').innerHTML = state.isMuted ? '<i class="fa-solid fa-volume-xmark text-rose-400"></i>' : '<i class="fa-solid fa-volume-high text-emerald-400"></i>';
+        document.getElementById('dock-mute-btn').innerHTML = state.isMuted ? '<i class="fa-solid fa-volume-xmark text-rose-500"></i>' : '<i class="fa-solid fa-volume-high text-sky-600"></i>';
       };
 
       const speeds = [1.0, 1.25, 1.5, 2.0, 0.75]; let sIdx = 0;
       document.getElementById('modern-speed-btn').onclick = e => { sIdx = (sIdx + 1) % speeds.length; state.playbackRate = speeds[sIdx]; audio.playbackRate = state.playbackRate; e.target.textContent = `${state.playbackRate}x`; };
-      document.getElementById('modern-shuffle-btn').onclick = e => { state.isShuffle = !state.isShuffle; e.currentTarget.classList.toggle('text-emerald-400', state.isShuffle); };
-      document.getElementById('modern-repeat-btn').onclick = e => { state.isRepeatOne = !state.isRepeatOne; e.currentTarget.classList.toggle('text-emerald-400', state.isRepeatOne); };
-      document.getElementById('modern-toggle-queue-btn').onclick = () => document.getElementById('modern-playlist-items').classList.toggle('hidden');
+      document.getElementById('modern-shuffle-btn').onclick = e => { state.isShuffle = !state.isShuffle; e.currentTarget.classList.toggle('text-sky-600', state.isShuffle); };
+      document.getElementById('modern-repeat-btn').onclick = e => { state.isRepeatOne = !state.isRepeatOne; e.currentTarget.classList.toggle('text-sky-600', state.isRepeatOne); };
 
+      document.getElementById('quick-load-mahmoud-btn').onclick = () => { state.playlistQueue = MAHMOUD_DB.map(makeMahmoudItem); playUnifiedItem(state.playlistQueue[0], true); };
       document.getElementById('quick-load-warsh-btn').onclick = () => { state.playlistQueue = ALL_SURAHS.map(s => makeQuranItem(RECITERS_DB[0], s)); playUnifiedItem(state.playlistQueue[0], true); };
       document.getElementById('quick-load-amdah-btn').onclick = () => { state.playlistQueue = AMDAH_DB.map(makeAmdahItem); playUnifiedItem(state.playlistQueue[0], true); };
       document.getElementById('quick-load-lectures-btn').onclick = () => { state.playlistQueue = LECTURES_DB.map(makeLectureItem); playUnifiedItem(state.playlistQueue[0], true); };
-      document.getElementById('quick-load-doroos-btn').onclick = () => { state.playlistQueue = DOROOS_DB.map(makeDoroosItem); playUnifiedItem(state.playlistQueue[0], true); };
       document.getElementById('quick-load-adhkar-btn').onclick = () => { state.playlistQueue = ADHKAR_DB.map(makeAdhkarItem); playUnifiedItem(state.playlistQueue[0], true); };
 
       document.querySelectorAll('.channel-card').forEach(c => {
         c.onclick = () => {
           const st = c.dataset.station;
           if (st === 'morocco-warsh') document.getElementById('quick-load-warsh-btn').click();
+          else if (st === 'mahmoud-shahat') document.getElementById('quick-load-mahmoud-btn').click();
           else if (st === 'amdah-radio') document.getElementById('quick-load-amdah-btn').click();
-          else if (st === 'lectures-radio') document.getElementById('quick-load-lectures-btn').click();
-          else document.getElementById('quick-load-adhkar-btn').click();
+          else document.getElementById('quick-load-lectures-btn').click();
         };
       });
 
-      // Smart Mushaf Listeners
       const mushafSel = document.getElementById('mushaf-surah-select');
       ALL_SURAHS.forEach(s => { const o = document.createElement('option'); o.value = s.num; o.textContent = `${s.num}. سورة ${s.name_ar}`; mushafSel.appendChild(o); });
       mushafSel.onchange = e => loadSmartMushafSurah(parseInt(e.target.value, 10));
       document.getElementById('mushaf-repeat-select').onchange = e => { state.mushafAyahRepeat = parseInt(e.target.value, 10); };
       document.getElementById('mushaf-hifz-blur-btn').onclick = () => { state.mushafHifzBlur = !state.mushafHifzBlur; loadSmartMushafSurah(state.mushafSurah); };
-      document.getElementById('mushaf-play-surah-btn').onclick = () => {
-        const r = RECITERS_DB[parseInt(document.getElementById('mushaf-reciter-select').value, 10) || 0];
-        const s = ALL_SURAHS.find(x => x.num === state.mushafSurah);
-        const item = makeQuranItem(r, s); state.playlistQueue.unshift(item); playUnifiedItem(item, true);
-      };
-      document.getElementById('mushaf-mark-memorized-btn').onclick = () => showToast(`تم حفظ سورة رقم ${state.mushafSurah} في سجل الحفظ`, "success");
+      document.getElementById('mushaf-play-surah-btn').onclick = () => { const r = RECITERS_DB[parseInt(document.getElementById('mushaf-reciter-select').value, 10) || 0]; const s = ALL_SURAHS.find(x => x.num === state.mushafSurah); const item = makeQuranItem(r, s); state.playlistQueue.unshift(item); playUnifiedItem(item, true); };
+      document.getElementById('mushaf-mark-memorized-btn').onclick = () => showToast(`تم تسجيل سورة رقم ${state.mushafSurah} في سجل الحفظ`, "success");
 
-      // Filters
       document.getElementById('quran-active-reciter-select').onchange = e => { state.activeReciterIndex = parseInt(e.target.value, 10); renderFullSurahsGrid(); };
       document.getElementById('surah-search-input').oninput = e => { state.searchSurahQuery = e.target.value; renderFullSurahsGrid(); };
-      document.querySelectorAll('#hizb-filter-buttons .hizb-btn').forEach(b => {
-        b.onclick = () => { document.querySelectorAll('#hizb-filter-buttons .hizb-btn').forEach(x => { x.classList.remove('active', 'bg-morocco-green', 'text-white'); x.classList.add('bg-morocco-surface', 'text-slate-300'); }); b.classList.add('active', 'bg-morocco-green', 'text-white'); state.currentFilterHizb = b.dataset.hizb; renderFullSurahsGrid(); };
-      });
+      document.querySelectorAll('#hizb-filter-buttons .hizb-btn').forEach(b => b.onclick = () => { document.querySelectorAll('#hizb-filter-buttons .hizb-btn').forEach(x => { x.classList.remove('active', 'bg-sky-600', 'text-white'); x.classList.add('bg-white', 'text-slate-700'); }); b.classList.add('active', 'bg-sky-600', 'text-white'); state.currentFilterHizb = b.dataset.hizb; renderFullSurahsGrid(); });
       document.getElementById('reciters-search-input').oninput = e => { state.searchReciterQuery = e.target.value; renderRecitersGrid(); };
-      document.querySelectorAll('#country-filter-chips .filter-chip').forEach(b => {
-        b.onclick = () => { document.querySelectorAll('#country-filter-chips .filter-chip').forEach(x => { x.classList.remove('active', 'bg-morocco-green', 'text-white'); x.classList.add('bg-morocco-surface', 'text-slate-300'); }); b.classList.add('active', 'bg-morocco-green', 'text-white'); state.currentFilterCountry = b.dataset.country; renderRecitersGrid(); };
-      });
+      document.querySelectorAll('#country-filter-chips .filter-chip').forEach(b => b.onclick = () => { document.querySelectorAll('#country-filter-chips .filter-chip').forEach(x => { x.classList.remove('active', 'bg-sky-600', 'text-white'); x.classList.add('bg-white', 'text-slate-700'); }); b.classList.add('active', 'bg-sky-600', 'text-white'); state.currentFilterCountry = b.dataset.country; renderRecitersGrid(); });
+      document.getElementById('mahmoud-search-input').oninput = e => { state.searchMahmoudQuery = e.target.value; renderMahmoudGrid(); };
+      document.querySelectorAll('#mahmoud-filter-chips .mahmoud-chip').forEach(b => b.onclick = () => { document.querySelectorAll('#mahmoud-filter-chips .mahmoud-chip').forEach(x => { x.classList.remove('active', 'bg-sky-600', 'text-white'); x.classList.add('bg-white', 'text-slate-700'); }); b.classList.add('active', 'bg-sky-600', 'text-white'); state.currentMahmoudFilter = b.dataset.mahmoud; renderMahmoudGrid(); });
+      document.getElementById('play-all-mahmoud-btn').onclick = () => document.getElementById('quick-load-mahmoud-btn').click();
       document.getElementById('amdah-search-input').oninput = e => { state.searchAmdahQuery = e.target.value; renderAmdahGrid(); };
-      document.querySelectorAll('#amdah-filter-chips .amdah-chip').forEach(b => {
-        b.onclick = () => { document.querySelectorAll('#amdah-filter-chips .amdah-chip').forEach(x => { x.classList.remove('active', 'bg-amber-500', 'text-slate-950'); x.classList.add('bg-morocco-surface', 'text-slate-300'); }); b.classList.add('active', 'bg-amber-500', 'text-slate-950'); state.currentAmdahFilter = b.dataset.amdah; renderAmdahGrid(); };
-      });
+      document.querySelectorAll('#amdah-filter-chips .amdah-chip').forEach(b => b.onclick = () => { document.querySelectorAll('#amdah-filter-chips .amdah-chip').forEach(x => { x.classList.remove('active', 'bg-amber-500', 'text-white'); x.classList.add('bg-white', 'text-slate-700'); }); b.classList.add('active', 'bg-amber-500', 'text-white'); state.currentAmdahFilter = b.dataset.amdah; renderAmdahGrid(); });
       document.getElementById('play-all-amdah-btn').onclick = () => document.getElementById('quick-load-amdah-btn').click();
       document.getElementById('lectures-search-input').oninput = e => { state.searchLectureQuery = e.target.value; renderLecturesGrid(); };
-      document.querySelectorAll('#lectures-filter-chips .lecture-chip').forEach(b => {
-        b.onclick = () => { document.querySelectorAll('#lectures-filter-chips .lecture-chip').forEach(x => { x.classList.remove('active', 'bg-purple-600', 'text-white'); x.classList.add('bg-morocco-surface', 'text-slate-300'); }); b.classList.add('active', 'bg-purple-600', 'text-white'); state.currentLectureFilter = b.dataset.sheikh; renderLecturesGrid(); };
-      });
+      document.querySelectorAll('#lectures-filter-chips .lecture-chip').forEach(b => b.onclick = () => { document.querySelectorAll('#lectures-filter-chips .lecture-chip').forEach(x => { x.classList.remove('active', 'bg-purple-600', 'text-white'); x.classList.add('bg-white', 'text-slate-700'); }); b.classList.add('active', 'bg-purple-600', 'text-white'); state.currentLectureFilter = b.dataset.sheikh; renderLecturesGrid(); });
       document.getElementById('play-all-lectures-btn').onclick = () => document.getElementById('quick-load-lectures-btn').click();
       document.getElementById('doroos-search-input').oninput = e => { state.searchDoroosQuery = e.target.value; renderDoroosGrid(); };
-      document.querySelectorAll('#doroos-filter-chips .doroos-chip').forEach(b => {
-        b.onclick = () => { document.querySelectorAll('#doroos-filter-chips .doroos-chip').forEach(x => { x.classList.remove('active', 'bg-indigo-600', 'text-white'); x.classList.add('bg-morocco-surface', 'text-slate-300'); }); b.classList.add('active', 'bg-indigo-600', 'text-white'); state.currentDoroosFilter = b.dataset.science; renderDoroosGrid(); };
-      });
-      document.getElementById('play-all-doroos-btn').onclick = () => document.getElementById('quick-load-doroos-btn').click();
+      document.querySelectorAll('#doroos-filter-chips .doroos-chip').forEach(b => b.onclick = () => { document.querySelectorAll('#doroos-filter-chips .doroos-chip').forEach(x => { x.classList.remove('active', 'bg-indigo-600', 'text-white'); x.classList.add('bg-white', 'text-slate-700'); }); b.classList.add('active', 'bg-indigo-600', 'text-white'); state.currentDoroosFilter = b.dataset.science; renderDoroosGrid(); });
+      document.getElementById('play-all-doroos-btn').onclick = () => { state.playlistQueue = DOROOS_DB.map(makeDoroosItem); playUnifiedItem(state.playlistQueue[0], true); };
       document.getElementById('adhkar-search-input').oninput = e => { state.searchAdhkarQuery = e.target.value; renderAdhkarGrid(); };
-      document.querySelectorAll('#adhkar-filter-chips .adhkar-chip').forEach(b => {
-        b.onclick = () => { document.querySelectorAll('#adhkar-filter-chips .adhkar-chip').forEach(x => { x.classList.remove('active', 'bg-teal-600', 'text-white'); x.classList.add('bg-morocco-surface', 'text-slate-300'); }); b.classList.add('active', 'bg-teal-600', 'text-white'); state.currentAdhkarFilter = b.dataset.adhkar; renderAdhkarGrid(); };
-      });
+      document.querySelectorAll('#adhkar-filter-chips .adhkar-chip').forEach(b => b.onclick = () => { document.querySelectorAll('#adhkar-filter-chips .adhkar-chip').forEach(x => { x.classList.remove('active', 'bg-teal-600', 'text-white'); x.classList.add('bg-white', 'text-slate-700'); }); b.classList.add('active', 'bg-teal-600', 'text-white'); state.currentAdhkarFilter = b.dataset.adhkar; renderAdhkarGrid(); });
       document.getElementById('play-all-adhkar-btn').onclick = () => document.getElementById('quick-load-adhkar-btn').click();
       document.getElementById('close-reciter-modal-btn').onclick = () => document.getElementById('reciter-modal').classList.add('hidden');
     }
@@ -1494,8 +1317,8 @@
       updateLiveDates();
       state.playlistQueue = [
         makeQuranItem(RECITERS_DB[0], ALL_SURAHS[17]),
+        makeMahmoudItem(MAHMOUD_DB[0]),
         makeQuranItem(RECITERS_DB[1], ALL_SURAHS[54]),
-        makeQuranItem(RECITERS_DB[2], ALL_SURAHS[35]),
         makeQuranItem(RECITERS_DB[4], ALL_SURAHS[18])
       ];
       populateReciterSelects();
@@ -1505,12 +1328,14 @@
       loadSmartMushafSurah(1);
       renderFullSurahsGrid();
       renderRecitersGrid();
+      renderMahmoudGrid();
       renderAmdahGrid();
       renderLecturesGrid();
       renderDoroosGrid();
       renderAdhkarGrid();
       renderCustomTracks();
       playUnifiedItem(state.playlistQueue[0], false);
+      drawCenterWaveform();
       expandEncyclopediaLive();
     });
   </script>
